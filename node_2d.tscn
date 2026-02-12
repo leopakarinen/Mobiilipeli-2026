@@ -6,7 +6,7 @@
 
 [node name="Root" type="Node2D" node_paths=PackedStringArray("_fishes")]
 script = ExtResource("1_0e48y")
-_fishes = [NodePath("Fish1"), NodePath("Fish2")]
+_fishes = [NodePath("Fish1"), NodePath("Fish2"), NodePath("Fish3")]
 
 [node name="Fish1" type="Sprite2D" parent="."]
 position = Vector2(88.00001, 82)
@@ -27,3 +27,13 @@ _maxSpeed = 500.0
 _moveBetweenPoints = true
 _pointA = Vector2(-465, 584)
 _pointB = Vector2(1400, 584)
+
+[node name="Fish3" type="Sprite2D" parent="."]
+position = Vector2(1236, 323.99997)
+scale = Vector2(0.261875, 0.26321277)
+texture = ExtResource("2_epypp")
+script = ExtResource("3_epypp")
+_maxSpeed = 200.0
+_moveBetweenPoints = true
+_pointA = Vector2(1400, 324)
+_pointB = Vector2(-400, 324)
