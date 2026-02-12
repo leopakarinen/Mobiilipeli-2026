@@ -1,17 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3hgx46nrxgi4"]
+[gd_scene load_steps=4 format=3 uid="uid://d3hgx46nrxgi4"]
 
-[ext_resource type="Texture2D" uid="uid://cmi6jgiwvon5g" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://dno6dum3hjp85" path="res://Scripts/Fishmover.cs" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://buun5dx4ckney" path="res://Assets/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA5L2hpcHBvdW5pY29ybl8zZF9yZW5kZXJfY2hhcmFjdGVyX29mX29yYW5n.webp" id="2_epypp"]
+[ext_resource type="Script" uid="uid://ddgjrkpwcyt00" path="res://Scripts/Fish.cs" id="3_epypp"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Root" type="Node2D" node_paths=PackedStringArray("_fishes")]
+script = ExtResource("1_0e48y")
+_fishes = [NodePath("Fish1"), NodePath("Fish2")]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(68, 81)
-texture = ExtResource("1_wtcfe")
+[node name="Fish1" type="Sprite2D" parent="."]
+position = Vector2(88.00001, 82)
+scale = Vector2(0.20375001, 0.20688461)
+texture = ExtResource("2_epypp")
+script = ExtResource("3_epypp")
+_maxSpeed = 500.0
+_moveBetweenPoints = true
+_pointA = Vector2(-400, 100)
+_pointB = Vector2(1400, 100)
 
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(250, 74)
-texture = ExtResource("1_wtcfe")
-
-[node name="Icon3" type="Sprite2D" parent="."]
-position = Vector2(164, 215)
-texture = ExtResource("1_wtcfe")
+[node name="Fish2" type="Sprite2D" parent="."]
+position = Vector2(118.999985, 569)
+scale = Vector2(0.27250007, 0.21870662)
+texture = ExtResource("2_epypp")
+script = ExtResource("3_epypp")
+_maxSpeed = 500.0
+_moveBetweenPoints = true
+_pointA = Vector2(-465, 584)
+_pointB = Vector2(1400, 584)

@@ -10,13 +10,21 @@ config_version=5
 
 [application]
 
-config/name="New game project"
-config/features=PackedStringArray("4.5", "Mobile")
+config/name="Kissanpennut-Peliprojekti"
+run/main_scene="uid://d3hgx46nrxgi4"
+config/features=PackedStringArray("4.5", "C#", "Mobile")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="New game project"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "yellow",
+"res://Scripts/": "blue"
+}
 
 [rendering]
 
