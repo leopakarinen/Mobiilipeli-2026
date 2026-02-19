@@ -29,8 +29,8 @@ _pointA = Vector2(-465, 584)
 _pointB = Vector2(1400, 584)
 
 [node name="Fish3" type="Sprite2D" parent="."]
-position = Vector2(1236, 323.99997)
-scale = Vector2(0.261875, 0.26321277)
+position = Vector2(1047, 229)
+scale = Vector2(0.14373751, 0.12360638)
 texture = ExtResource("2_epypp")
 script = ExtResource("3_epypp")
 _maxSpeed = 200.0
