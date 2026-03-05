@@ -23,6 +23,8 @@ project/assembly_name="New game project"
 
 folder_colors={
 "res://Assets/": "yellow",
+"res://DesignPlans/": "green",
+"res://Scenes/": "orange",
 "res://Scripts/": "blue"
 }
 
