@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Fish : Sprite2D
+public partial class Fish : Area2D
 {
 
 	[Export] private float _maxSpeed = 60.0f;
@@ -25,7 +25,23 @@ public partial class Fish : Sprite2D
 			_currentTarget = _pointB; // initial target
 		}
 	}
+	/// <summary>
+	/// Detects tap / mouse click on the fish
+	/// </summary>
 
+    public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
+    {
+        if (@event is InputEventMouseButton mouse && mouse.Pressed)
+		{
+			GD.Print("fish clicked");
+			QueueFree();
+		}
+		if (@event is InputEventScreenTouch touch && touch.Pressed)
+		{
+			GD.Print("fish clicked");
+			QueueFree();
+		}
+    }
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
