@@ -2,7 +2,7 @@ using Godot;
 using System;
 using Godot.Collections;
 
-public partial class Fishmover : Node
+public partial class Fishmover : Node2D
 {
 	//Direction of the movement. -1 = left, 1 = right.
 	[Export] private int _direction = 1;

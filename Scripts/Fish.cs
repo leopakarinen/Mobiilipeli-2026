@@ -12,6 +12,9 @@ public partial class Fish : Area2D
 	[Export] private Vector2 _pointA;
 	[Export] private Vector2 _pointB;
 
+
+
+
 	private Vector2 _currentTarget;
 	// Called when the node enters the scene tree for the first time.
 	//If we choose to move between points the character is moved to point A

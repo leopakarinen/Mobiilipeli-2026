@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyytki04um4tp"]
+
+[ext_resource type="Script" uid="uid://dxf3yhtcrypem" path="res://Scripts/FishSpawner.cs" id="1_idj7w"]
+[ext_resource type="PackedScene" uid="uid://d3hgx46nrxgi4" path="res://Scenes/Fish.tscn" id="2_kln2b"]
+
+[node name="Main" type="Node2D"]
+
+[node name="FishSpawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("1_idj7w")
+fish_scn = ExtResource("2_kln2b")
+spawn_points = [NodePath("SpawnPoint1"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3")]
+eps = 5.0
+
+[node name="SpawnPoint1" type="Marker2D" parent="FishSpawner"]
+position = Vector2(-64, 459)
+
+[node name="SpawnPoint2" type="Marker2D" parent="FishSpawner"]
+position = Vector2(1179, 445)
+
+[node name="SpawnPoint3" type="Marker2D" parent="FishSpawner"]
+position = Vector2(-94, 144)
