@@ -19,6 +19,8 @@ public partial class Fish : Area2D
 	// Called when the node enters the scene tree for the first time.
 	//If we choose to move between points the character is moved to point A
 	// the target is point b
+
+	private Sprite2D _fish;
 	public override void _Ready()
 	{
 
@@ -27,6 +29,9 @@ public partial class Fish : Area2D
 			GlobalPosition = _pointA; //start point
 			_currentTarget = _pointB; // initial target
 		}
+
+		_fish.FlipH = true;
+
 	}
 	/// <summary>
 	/// Detects tap / mouse click on the fish

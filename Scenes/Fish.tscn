@@ -27,9 +27,10 @@ _pointA = Vector2(-400, 100)
 _pointB = Vector2(1400, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fish1"]
-position = Vector2(80.17492, 322.95398)
+position = Vector2(-233.23611, 308.27426)
 scale = Vector2(1, 0.984431)
 texture = ExtResource("2_epypp")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fish1"]
 position = Vector2(-80.1749, 631.2283)
@@ -45,8 +46,9 @@ _pointA = Vector2(-465, 500)
 _pointB = Vector2(1400, 500)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fish2"]
-position = Vector2(457.59088, 7.5916214)
+position = Vector2(130.74017, 7.5916214)
 texture = ExtResource("2_epypp")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fish2"]
 position = Vector2(297.43396, 337.82642)

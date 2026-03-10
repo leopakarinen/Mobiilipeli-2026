@@ -12,10 +12,10 @@ spawn_points = [NodePath("SpawnPoint1"), NodePath("SpawnPoint2"), NodePath("Spaw
 eps = 5.0
 
 [node name="SpawnPoint1" type="Marker2D" parent="FishSpawner"]
-position = Vector2(-64, 459)
+position = Vector2(-30, 530)
 
 [node name="SpawnPoint2" type="Marker2D" parent="FishSpawner"]
-position = Vector2(1179, 445)
+position = Vector2(1181, 275)
 
 [node name="SpawnPoint3" type="Marker2D" parent="FishSpawner"]
-position = Vector2(-94, 144)
+position = Vector2(-34, 114)
