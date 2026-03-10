@@ -23,15 +23,13 @@ public partial class Fish : Area2D
 	private Sprite2D _fish;
 	public override void _Ready()
 	{
+		 _fish = GetNode<Sprite2D>("Sprite2D"); // get the sprite node
 
 		if(_moveBetweenPoints)
 		{
 			GlobalPosition = _pointA; //start point
 			_currentTarget = _pointB; // initial target
 		}
-
-		_fish.FlipH = true;
-
 	}
 	/// <summary>
 	/// Detects tap / mouse click on the fish
@@ -69,6 +67,12 @@ public partial class Fish : Area2D
 			//Direction is not valid. Nothing to do.
 			return;
 		}
+
+		if (direction == 1)
+        _fish.FlipH = true;   // right
+    	else if (direction == -1)
+        _fish.FlipH = false;  // left
+
 
 		Vector2 movement = new Vector2(direction, 0) * _maxSpeed * deltatime;
 		Translate(movement);
