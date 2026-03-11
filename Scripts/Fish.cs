@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Drawing;
 
 public partial class Fish : Area2D
 {
@@ -11,6 +12,7 @@ public partial class Fish : Area2D
 	//set in editor cordinates
 	[Export] private Vector2 _pointA;
 	[Export] private Vector2 _pointB;
+	[Export] private int _score = 0;
 
 
 
@@ -39,12 +41,7 @@ public partial class Fish : Area2D
     {
         if (@event is InputEventMouseButton mouse && mouse.Pressed)
 		{
-			GD.Print("fish clicked");
-			QueueFree();
-		}
-		if (@event is InputEventScreenTouch touch && touch.Pressed)
-		{
-			GD.Print("fish clicked");
+			GameManager.Instance.AddPoint();
 			QueueFree();
 		}
     }
