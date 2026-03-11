@@ -27,7 +27,7 @@ public partial class Fish : Area2D
 
 		if(_moveBetweenPoints)
 		{
-			GlobalPosition = _pointA; //start point
+			_pointA = GlobalPosition; //start point
 			_currentTarget = _pointB; // initial target
 		}
 	}
