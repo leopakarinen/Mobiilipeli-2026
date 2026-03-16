@@ -8,14 +8,13 @@
 [node name="FishSpawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_idj7w")
 fish_scn = ExtResource("2_kln2b")
-spawn_points = [NodePath("SpawnPoint1"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3")]
-eps = 3.0
+spawn_points = [NodePath("SpawnLeft1"), NodePath("SpawnRight1"), NodePath("SpawnLeft2")]
 
-[node name="SpawnPoint1" type="Marker2D" parent="FishSpawner"]
-position = Vector2(-85, 429)
+[node name="SpawnLeft1" type="Marker2D" parent="FishSpawner"]
+position = Vector2(-38, 516)
 
-[node name="SpawnPoint2" type="Marker2D" parent="FishSpawner"]
-position = Vector2(1232, 165)
+[node name="SpawnRight1" type="Marker2D" parent="FishSpawner"]
+position = Vector2(1189, 316)
 
-[node name="SpawnPoint3" type="Marker2D" parent="FishSpawner"]
-position = Vector2(-114, 64)
+[node name="SpawnLeft2" type="Marker2D" parent="FishSpawner"]
+position = Vector2(-41, 90)
