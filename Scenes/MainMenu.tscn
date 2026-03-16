@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcvknpygijxli"]
+
+[ext_resource type="Texture2D" uid="uid://buh00pdr7udj1" path="res://Assets/Playbutton.png" id="1_853f1"]
+[ext_resource type="Script" uid="uid://ccqv5y7wk0p01" path="res://Scripts/PlayButton.cs" id="2_8saeu"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Play" type="TextureButton" parent="."]
+offset_left = 367.0
+offset_top = 31.0
+offset_right = 625.0
+offset_bottom = 189.0
+texture_normal = ExtResource("1_853f1")
+script = ExtResource("2_8saeu")
