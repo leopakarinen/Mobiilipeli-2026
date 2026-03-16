@@ -1,36 +1,52 @@
 using Godot;
-using System;
 
-public partial class FishSpawner : Node2D {
+public partial class FishSpawner : Node2D
+{
+    [Export] private PackedScene fish_scn;
+    [Export] private Marker2D[] spawn_points;
+    [Export] private float minSpawnTime = 2f;
+    [Export] private float maxSpawnTime = 5f;
 
-	[Export] PackedScene fish_scn;
-	[Export] Marker2D[] spawn_points;
-	[Export] float eps = 7f;
+    private float time_until_spawn = 0f;
+    private float nextSpawnTime = 0f;
+    private RandomNumberGenerator rng = new RandomNumberGenerator();
 
-	float spawn_rate;
+    public override void _Ready()
+    {
+        RandomizeSpawnTime();
+    }
 
-	float time_until_spawn = 0;
+    public override void _Process(double delta)
+    {
+        time_until_spawn += (float)delta;
 
-	public override void _Ready() {
-		spawn_rate = eps;
-	}
+        if (time_until_spawn >= nextSpawnTime)
+        {
+            Spawn();
+            time_until_spawn = 0f;
+            RandomizeSpawnTime();
+        }
+    }
 
-	public override void _Process(double delta) {
+    private void Spawn()
+    {
+        if (fish_scn == null || spawn_points.Length == 0)
+            return;
 
-		if (time_until_spawn > spawn_rate) {
-			Spawn();
-			time_until_spawn = 0;
-		} else {
-			time_until_spawn += (float)delta;
-		}
-	}
+        int index = rng.RandiRange(0, spawn_points.Length - 1);
+        Marker2D spawnPoint = spawn_points[index];
 
-	private void Spawn() {
-		RandomNumberGenerator rng = new RandomNumberGenerator();
-		Vector2 location = spawn_points[rng.Randi() % spawn_points.Length].GlobalPosition;
-		Fishmover fish = (Fishmover)fish_scn.Instantiate();
-		fish.GlobalPosition = location;
-		GetTree().Root.AddChild(fish);
-	}
+        Fish fish = fish_scn.Instantiate<Fish>();
+        AddChild(fish);
 
+        fish.GlobalPosition = spawnPoint.GlobalPosition;
+
+        int direction = spawnPoint.Name.ToString().Contains("Left") ? 1 : -1;
+        fish.SetDirection(direction);
+    }
+
+    private void RandomizeSpawnTime()
+    {
+        nextSpawnTime = rng.RandfRange(minSpawnTime, maxSpawnTime);
+    }
 }
