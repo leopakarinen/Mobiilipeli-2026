@@ -1,115 +1,57 @@
 using Godot;
-using System;
-using System.Drawing;
 
 public partial class Fish : Area2D
 {
+    [Export] private float _maxSpeed = 60.0f;
+    private int _direction = 1;
 
-	[Export] private float _maxSpeed = 60.0f;
+    private Sprite2D _fish;
 
-	//determines whether the vehicle moves in a fixed direction(false) or between two points(true)
-	[Export] private bool _moveBetweenPoints = false;
-	//set in editor cordinates
-	[Export] private Vector2 _pointA;
-	[Export] private Vector2 _pointB;
-	[Export] private int _score = 0;
+    public override void _Ready()
+    {
+        _fish = GetNode<Sprite2D>("Sprite2D");
+        UpdateFlip();
+    }
 
-
-
-
-	private Vector2 _currentTarget;
-	// Called when the node enters the scene tree for the first time.
-	//If we choose to move between points the character is moved to point A
-	// the target is point b
-
-	private Sprite2D _fish;
-	public override void _Ready()
+    public override void _Process(double delta)
 	{
-		 _fish = GetNode<Sprite2D>("Sprite2D"); // get the sprite node
+    Vector2 movement = new Vector2(_direction, 0) * _maxSpeed * (float)delta;
+    GlobalPosition += movement;
 
-		if(_moveBetweenPoints)
-		{
-			_pointA = GlobalPosition; //start point
-			_currentTarget = _pointB; // initial target
-		}
+    Vector2 screenSize = GetViewportRect().Size;
+
+    if (GlobalPosition.X < -80 || GlobalPosition.X > screenSize.X + 80) //Checks where a fish is destroyed.
+    {
+        GD.Print("A fish escaped!");
+        QueueFree(); // removes the fish
+    }
 	}
-	/// <summary>
-	/// Detects tap / mouse click on the fish
-	/// </summary>
 
+    public void SetDirection(int direction)
+    {
+        _direction = direction;
+        UpdateFlip();
+    }
+
+	//Checks which direction the fish is going and based on that flips the sprite.
+    private void UpdateFlip()
+    {
+        if (_fish == null) return;
+
+        if (_direction == 1)
+            _fish.FlipH = true;
+        else
+            _fish.FlipH = false;
+    }
+
+
+	//Checks if a fish is pressed and adds a point to the player.
     public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
     {
         if (@event is InputEventMouseButton mouse && mouse.Pressed)
-		{
-			GameManager.Instance.AddPoint();
-			QueueFree();
-		}
+        {
+            GameManager.Instance.AddPoint();
+            QueueFree();
+        }
     }
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
-
-	/// <summary>
-	/// Moves the vehicle to a direction defined by attribute "direction" with speed _maxSpeed
-	/// </summary>
-	/// <param name="direction">The direction of the movement. -1 = left 1 = right</param>
-	/// <param name="deltatime">the time since the previous frame</param>
-
-	public void Move(int direction, float deltatime)
-	{
-		if (direction < -1 || direction > 1)
-		{
-			//Direction is not valid. Nothing to do.
-			return;
-		}
-
-		if (direction == 1)
-        _fish.FlipH = true;   // right
-    	else if (direction == -1)
-        _fish.FlipH = false;  // left
-
-
-		Vector2 movement = new Vector2(direction, 0) * _maxSpeed * deltatime;
-		Translate(movement);
-	}
-	/// <summary>
-	/// Moves vehicle between two points at a fixed pace
-	/// Automatically reverses direction when reaching target
-	/// </summary>
-	/// <param name="MoveBetweenPoins"></param>
-	public void MoveBetweenPoints(float deltatime)
-	{
-		Vector2 direction = (_currentTarget - GlobalPosition).Normalized();
-		Vector2 movement = direction * _maxSpeed * deltatime;
-		Translate(movement);
-
-
-		//chech if the target is reached
-		if(GlobalPosition.DistanceTo(_currentTarget) < _maxSpeed * deltatime)
-		{
-			//swhich target
-			if (GlobalPosition == _currentTarget)
-            {
-                if (_currentTarget == _pointB)
-                {
-                    QueueFree();
-                    return;
-                }
-            }
-
-
-		}
-	}
-	/// <summary>
-	/// Returns whether this vehicle is set to move between points
-	/// used by VehicleRunner to determine which movement method to use
-	/// </summary>
-	/// <returns>IsMovingBetweenPoints</returns>
-	public bool IsMovingBetweenPoints()
-	{
-		return _moveBetweenPoints;
-	}
-
 }

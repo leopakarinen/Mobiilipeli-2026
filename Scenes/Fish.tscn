@@ -1,72 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3hgx46nrxgi4"]
+[gd_scene load_steps=4 format=3 uid="uid://d3hgx46nrxgi4"]
 
-[ext_resource type="Script" uid="uid://dno6dum3hjp85" path="res://Scripts/Fishmover.cs" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://dclcn50xfph0i" path="res://Assets/Ahvena.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://cvkdbyo4ocoa3" path="res://Assets/pikseliahvena.png" id="1_15fnf"]
 [ext_resource type="Script" uid="uid://ddgjrkpwcyt00" path="res://Scripts/Fish.cs" id="3_epypp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hh5uf"]
-size = Vector2(1698.2505, 976.20197)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_two43"]
+size = Vector2(203, 123)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6whob"]
-size = Vector2(1680.0128, 1009.68646)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7krg"]
-size = Vector2(1836.6803, 970.8239)
-
-[node name="Root" type="Node2D" node_paths=PackedStringArray("_fishes")]
-script = ExtResource("1_0e48y")
-_fishes = [NodePath("Fish1"), NodePath("Fish2"), NodePath("Fish3")]
-
-[node name="Fish1" type="Area2D" parent="."]
-position = Vector2(172, 38)
-scale = Vector2(0.13720001, 0.13624232)
+[node name="Fish" type="Area2D"]
 script = ExtResource("3_epypp")
-_maxSpeed = 200.0
-_moveBetweenPoints = true
-_pointA = Vector2(-400, 100)
-_pointB = Vector2(1400, 100)
+_maxSpeed = 100.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Fish1"]
-position = Vector2(-233.23611, 308.27426)
-scale = Vector2(1, 0.984431)
-texture = ExtResource("2_epypp")
-flip_h = true
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(19, 0)
+texture = ExtResource("1_15fnf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish1"]
-position = Vector2(-80.1749, 631.2283)
-shape = SubResource("RectangleShape2D_hh5uf")
-
-[node name="Fish2" type="Area2D" parent="."]
-position = Vector2(192.00002, 481)
-scale = Vector2(0.15297504, 0.1317242)
-script = ExtResource("3_epypp")
-_maxSpeed = 200.0
-_moveBetweenPoints = true
-_pointA = Vector2(-465, 500)
-_pointB = Vector2(1400, 500)
-
-[node name="Sprite2D" type="Sprite2D" parent="Fish2"]
-position = Vector2(130.74017, 7.5916214)
-texture = ExtResource("2_epypp")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish2"]
-position = Vector2(297.43396, 337.82642)
-scale = Vector2(0.9999999, 0.99999964)
-shape = SubResource("RectangleShape2D_6whob")
-
-[node name="Fish3" type="Area2D" parent="."]
-position = Vector2(1047, 229)
-scale = Vector2(0.14373751, 0.12360638)
-script = ExtResource("3_epypp")
-_maxSpeed = 200.0
-_moveBetweenPoints = true
-_pointA = Vector2(1400, 324)
-_pointB = Vector2(-400, 324)
-
-[node name="Sprite2D" type="Sprite2D" parent="Fish3"]
-texture = ExtResource("2_epypp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish3"]
-position = Vector2(-215.66992, 323.60815)
-shape = SubResource("RectangleShape2D_u7krg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, -8)
+shape = SubResource("RectangleShape2D_two43")
