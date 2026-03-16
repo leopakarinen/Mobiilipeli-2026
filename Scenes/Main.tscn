@@ -9,6 +9,8 @@
 script = ExtResource("1_idj7w")
 fish_scn = ExtResource("2_kln2b")
 spawn_points = [NodePath("SpawnLeft1"), NodePath("SpawnRight1"), NodePath("SpawnLeft2")]
+minSpawnTime = 1.0
+maxSpawnTime = 3.0
 
 [node name="SpawnLeft1" type="Marker2D" parent="FishSpawner"]
 position = Vector2(-38, 516)
