@@ -3,6 +3,7 @@ using Godot;
 public partial class Fish : Area2D
 {
     [Export] private float _maxSpeed = 60.0f;
+    [Export] private Texture2D[] _fishTextures;
     private int _direction = 1;
 
     private Sprite2D _fish;
@@ -10,6 +11,7 @@ public partial class Fish : Area2D
     public override void _Ready()
     {
         _fish = GetNode<Sprite2D>("Sprite2D");
+        SetRandomTexture();
         UpdateFlip();
     }
 
@@ -42,6 +44,16 @@ public partial class Fish : Area2D
             _fish.FlipH = true;
         else
             _fish.FlipH = false;
+    }
+
+     private void SetRandomTexture()
+    {
+        if (_fish == null || _fishTextures == null || _fishTextures.Length == 0)
+            return;
+
+        RandomNumberGenerator rng = new RandomNumberGenerator();
+        int index = rng.RandiRange(0, _fishTextures.Length - 1);
+        _fish.Texture = _fishTextures[index];
     }
 
 
