@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_two43"]
 size = Vector2(203, 123)
 
-[node name="Fish" type="Area2D"]
+[node name="Fish" type="Area2D" groups=["Fish"]]
 script = ExtResource("3_epypp")
 _maxSpeed = 200.0
 _fishTextures = Array[Texture2D]([ExtResource("1_15fnf"), ExtResource("3_bce5k")])

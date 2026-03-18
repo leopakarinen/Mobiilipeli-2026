@@ -30,7 +30,7 @@ public partial class HazardSpawner : Node2D
 		Vector2 screenSize = GetViewportRect().Size;
 		float randomX = rng.RandfRange(0, screenSize.X);
 
-		hazard.GlobalPosition = new Vector2(randomX, -50);
+		hazard.GlobalPosition = new Vector2(randomX, -100);
 	}
 
 

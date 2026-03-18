@@ -7,6 +7,11 @@ public partial class Boot : Area2D
     {
         AreaEntered += OnAreaEntered;
     }
+
+    public override void _Process(double delta)
+    {
+        GlobalPosition += new  Vector2(0, 100 * (float)delta);
+    }
     public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
     {
         if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
@@ -22,6 +27,7 @@ public partial class Boot : Area2D
         {
             GameManager.Instance.LoseLife();
             GD.Print("Hit a fish");
+            Area.QueueFree();
             QueueFree();
         }
     }

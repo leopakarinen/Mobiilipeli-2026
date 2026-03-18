@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://es16qgowj3fv" path="res://Assets/Boot.png" id="2_tmp6q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0g2dh"]
-size = Vector2(130, 103)
+size = Vector2(102, 69)
 
 [node name="Boot" type="Area2D"]
 position = Vector2(1, -2)
@@ -16,5 +16,5 @@ scale = Vector2(0.9513127, 0.8959628)
 texture = ExtResource("2_tmp6q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(135, 82.5)
+position = Vector2(129, 77.5)
 shape = SubResource("RectangleShape2D_0g2dh")

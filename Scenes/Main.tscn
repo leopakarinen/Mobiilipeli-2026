@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyytki04um4tp"]
+[gd_scene load_steps=8 format=3 uid="uid://cyytki04um4tp"]
 
 [ext_resource type="Script" uid="uid://dxf3yhtcrypem" path="res://Scripts/FishSpawner.cs" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://d3hgx46nrxgi4" path="res://Scenes/Fish.tscn" id="2_kln2b"]
 [ext_resource type="Texture2D" uid="uid://660pwhdklh7h" path="res://Assets/Background2.png" id="3_kln2b"]
 [ext_resource type="Script" uid="uid://bla4ugmp8vthl" path="res://Scenes/HealthBar.cs" id="4_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://cmi6jgiwvon5g" path="res://icon.svg" id="5_v1gob"]
+[ext_resource type="Script" uid="uid://1b2g6ab3vtls" path="res://Scripts/HazardSpawner.cs" id="6_jw32o"]
+[ext_resource type="PackedScene" uid="uid://noqp4dsqd788" path="res://Scenes/Boot.tscn" id="7_50glp"]
 
 [node name="Main" type="Node2D"]
 
@@ -55,3 +57,7 @@ expand_mode = 2
 layout_mode = 2
 texture = ExtResource("5_v1gob")
 expand_mode = 2
+
+[node name="HazardSpawner" type="Node2D" parent="."]
+script = ExtResource("6_jw32o")
+hazardScene = ExtResource("7_50glp")
