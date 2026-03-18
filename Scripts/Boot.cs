@@ -3,6 +3,7 @@ using System;
 
 public partial class Boot : Area2D
 {
+    private bool hit = false;
     public override void _Ready()
     {
         AreaEntered += OnAreaEntered;
@@ -23,12 +24,16 @@ public partial class Boot : Area2D
 
     public void OnAreaEntered (Node Area)
     {
+        if (hit)
+            return;
         if(Area.IsInGroup("Fish"))
         {
+            hit = true;
+
             GameManager.Instance.LoseLife();
             GD.Print("Hit a fish");
-            Area.QueueFree();
-            QueueFree();
+            Area.CallDeferred("queue_free");
+            CallDeferred("queue_free");
         }
     }
 }

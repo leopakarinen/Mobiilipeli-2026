@@ -12,7 +12,7 @@ public partial class GameManager : Node
 		private set;
 	}
 
-	public GameManager()
+	public override void _Ready()
 	{
 		//Singleton promises that only one alien is could be made at a time
 		if(Instance == null)
@@ -26,6 +26,8 @@ public partial class GameManager : Node
 			QueueFree();
 			return;
 		}
+
+		ResetLives();
 	}
 	#endregion
 
@@ -61,7 +63,22 @@ public partial class GameManager : Node
 	private void GameOver()  // when player has lost all lives game ends
 	{
 		GD.Print("Game Over");
+
+		ResetLives();
+
+		CallDeferred(nameof(ReloadScene));
+	}
+
+	private void ReloadScene()
+	{
 		GetTree().ReloadCurrentScene();
 	}
 
+	public void ResetLives()
+	{
+		_lives = 3;
+		_score = 0;
+
+		EmitSignal(SignalName.LivesChanged, _lives);
+	}
 }

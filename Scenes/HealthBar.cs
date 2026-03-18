@@ -22,6 +22,13 @@ public partial class HealthBar : HBoxContainer
 		UpdateHearts(GameManager.Instance.Lives);
 	}
 
+    public override void _ExitTree()
+    {
+        if (GameManager.Instance != null)
+		{
+			GameManager.Instance.LivesChanged -= OnLivesChanged;
+		}
+    }
 	private void OnLivesChanged(int lives)
 	{
 		UpdateHearts(lives);
