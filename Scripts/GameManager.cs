@@ -3,7 +3,7 @@ using System;
 
 public partial class GameManager : Node
 {
-	#region Sinlgeleton
+	#region Singleton
 	//Get is public so gamemanager can get its hand on it from everywhere
 	//Set is private so it cant be overwritten so easily
 	public static GameManager Instance
@@ -49,7 +49,7 @@ public partial class GameManager : Node
 		_lives -= 1;
 
 		EmitSignal(SignalName.LivesChanged, _lives);
-		
+
 		GD.Print("Lives left: " + _lives);
 
 		if (_lives <= 0)
