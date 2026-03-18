@@ -32,6 +32,12 @@ public partial class GameManager : Node
 	private int _score = 0;
 	private int _lives = 3;
 
+	public int Lives
+	{
+    	get { return _lives; }
+	}
+
+	[Signal] public delegate void LivesChangedEventHandler(int lives);
 	public void AddPoint()
 	{
 		_score += 1;
@@ -41,6 +47,9 @@ public partial class GameManager : Node
 	public void LoseLife()   // new metod that tells if player loses a life
 	{
 		_lives -= 1;
+
+		EmitSignal(SignalName.LivesChanged, _lives);
+		
 		GD.Print("Lives left: " + _lives);
 
 		if (_lives <= 0)
