@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcvknpygijxli"]
+[gd_scene load_steps=5 format=3 uid="uid://bcvknpygijxli"]
 
 [ext_resource type="Script" uid="uid://blumju512dcuu" path="res://Scripts/MainMenu1.cs" id="1_8saeu"]
 [ext_resource type="Texture2D" uid="uid://buh00pdr7udj1" path="res://Assets/Playbutton.png" id="1_853f1"]
+[ext_resource type="PackedScene" uid="uid://b111vavtgsnp3" path="res://Scenes/settings_menu.tscn" id="3_8saeu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
 bg_color = Color(1, 1, 1, 1)
@@ -12,7 +13,7 @@ corner_radius_bottom_left = 16
 shadow_color = Color(0, 0, 0, 0.18039216)
 shadow_size = 5
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("_PlayButton", "_Exitbutton", "_SettingsButton", "_SettingsMenu")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -2.0
@@ -20,6 +21,10 @@ offset_top = -4.0
 offset_right = -2.0
 offset_bottom = -4.0
 script = ExtResource("1_8saeu")
+_PlayButton = NodePath("VBoxContainer/PlayButton")
+_Exitbutton = NodePath("VBoxContainer/ExitButton")
+_SettingsButton = NodePath("VBoxContainer/SettingsButton")
+_SettingsMenu = NodePath("SettingsMenu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -46,3 +51,6 @@ theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_853f1")
 text = "EXIT"
+
+[node name="SettingsMenu" parent="." instance=ExtResource("3_8saeu")]
+visible = false
