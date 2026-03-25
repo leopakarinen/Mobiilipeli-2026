@@ -4,7 +4,7 @@ using System;
 public partial class HazardSpawner : Node2D
 {
 	[Export] private PackedScene hazardScene;
-	[Export] private float spawnInterval = 3f; // time between spawns
+	[Export] private float spawnInterval = 5f; // time between spawns
 	private float timer = 0f; // checks if spawnInterval has been reached
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
 

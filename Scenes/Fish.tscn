@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3hgx46nrxgi4"]
+[gd_scene load_steps=7 format=3 uid="uid://d3hgx46nrxgi4"]
 
 [ext_resource type="Texture2D" uid="uid://cvkdbyo4ocoa3" path="res://Assets/pikseliahvena.png" id="1_15fnf"]
 [ext_resource type="Texture2D" uid="uid://cj437qmyx1a0l" path="res://Assets/pikselisärki.png" id="3_bce5k"]
 [ext_resource type="Script" uid="uid://ddgjrkpwcyt00" path="res://Scripts/Fish.cs" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://d2p44c7wnqw0j" path="res://Assets/lohi.png" id="4_bdn1d"]
+[ext_resource type="Texture2D" uid="uid://7ek8g3non4nw" path="res://Assets/hauki.png" id="5_orbqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_two43"]
 size = Vector2(203, 123)
@@ -10,7 +12,7 @@ size = Vector2(203, 123)
 [node name="Fish" type="Area2D" groups=["Fish"]]
 script = ExtResource("3_epypp")
 _maxSpeed = 200.0
-_fishTextures = Array[Texture2D]([ExtResource("1_15fnf"), ExtResource("3_bce5k")])
+_fishTextures = Array[Texture2D]([ExtResource("1_15fnf"), ExtResource("3_bce5k"), ExtResource("4_bdn1d"), ExtResource("5_orbqn")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(19, 0)
