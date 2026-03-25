@@ -28,9 +28,10 @@ _SettingsMenu = NodePath("SettingsMenu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 264.0
-offset_right = 601.0
-offset_bottom = 299.0
+offset_left = 369.0
+offset_top = 144.0
+offset_right = 706.0
+offset_bottom = 443.0
 
 [node name="PlayButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
