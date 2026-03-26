@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dxf3yhtcrypem" path="res://Scripts/FishSpawner.cs" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://d3hgx46nrxgi4" path="res://Scenes/Fish.tscn" id="2_kln2b"]
-[ext_resource type="Texture2D" uid="uid://660pwhdklh7h" path="res://Assets/Background2.png" id="3_kln2b"]
+[ext_resource type="Texture2D" uid="uid://bmh8o447mql80" path="res://Assets/tausta.png" id="3_jw32o"]
 [ext_resource type="Script" uid="uid://bla4ugmp8vthl" path="res://Scenes/HealthBar.cs" id="4_pbw6q"]
-[ext_resource type="Texture2D" uid="uid://cmi6jgiwvon5g" path="res://icon.svg" id="5_v1gob"]
+[ext_resource type="Texture2D" uid="uid://bye8t2ut0du1t" path="res://Assets/healthlure.png" id="5_jw32o"]
 [ext_resource type="Script" uid="uid://1b2g6ab3vtls" path="res://Scripts/HazardSpawner.cs" id="6_jw32o"]
 [ext_resource type="PackedScene" uid="uid://noqp4dsqd788" path="res://Scenes/Boot.tscn" id="7_50glp"]
 
@@ -28,7 +28,7 @@ position = Vector2(-41, 90)
 z_index = -1
 position = Vector2(576, 323.5)
 scale = Vector2(1.796875, 1.8027778)
-texture = ExtResource("3_kln2b")
+texture = ExtResource("3_jw32o")
 
 [node name="MainUI" type="CanvasLayer" parent="."]
 
@@ -45,17 +45,17 @@ script = ExtResource("4_pbw6q")
 
 [node name="Heart1" type="TextureRect" parent="MainUI/HealthBar"]
 layout_mode = 2
-texture = ExtResource("5_v1gob")
+texture = ExtResource("5_jw32o")
 expand_mode = 2
 
 [node name="Heart2" type="TextureRect" parent="MainUI/HealthBar"]
 layout_mode = 2
-texture = ExtResource("5_v1gob")
+texture = ExtResource("5_jw32o")
 expand_mode = 2
 
 [node name="Heart3" type="TextureRect" parent="MainUI/HealthBar"]
 layout_mode = 2
-texture = ExtResource("5_v1gob")
+texture = ExtResource("5_jw32o")
 expand_mode = 2
 
 [node name="HazardSpawner" type="Node2D" parent="."]
