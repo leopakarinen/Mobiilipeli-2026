@@ -1,12 +1,79 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyytki04um4tp"]
+[gd_scene load_steps=12 format=3 uid="uid://cyytki04um4tp"]
 
 [ext_resource type="Script" uid="uid://dxf3yhtcrypem" path="res://Scripts/FishSpawner.cs" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://d3hgx46nrxgi4" path="res://Scenes/Fish.tscn" id="2_kln2b"]
 [ext_resource type="Texture2D" uid="uid://bmh8o447mql80" path="res://Assets/tausta.png" id="3_jw32o"]
 [ext_resource type="Script" uid="uid://bla4ugmp8vthl" path="res://Scripts/HealthBar.cs" id="4_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://bye8t2ut0du1t" path="res://Assets/healthlure.png" id="5_jw32o"]
+[ext_resource type="Texture2D" uid="uid://djcsavqlevjjk" path="res://Assets/peli26_lure_life1.3.png" id="6_50glp"]
 [ext_resource type="Script" uid="uid://1b2g6ab3vtls" path="res://Scripts/HazardSpawner.cs" id="6_jw32o"]
 [ext_resource type="PackedScene" uid="uid://noqp4dsqd788" path="res://Scenes/Boot.tscn" id="7_50glp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vy5pj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jw32o")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jw32o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_50glp")
+}],
+"loop": false,
+"name": &"Lose",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmxlf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jw32o")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jw32o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_50glp")
+}],
+"loop": false,
+"name": &"Lose",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kpch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jw32o")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jw32o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_50glp")
+}],
+"loop": false,
+"name": &"Lose",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D"]
 
@@ -26,7 +93,7 @@ position = Vector2(-41, 90)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(576, 323.5)
+position = Vector2(573, 323)
 scale = Vector2(1.796875, 1.8027778)
 texture = ExtResource("3_jw32o")
 
@@ -43,20 +110,23 @@ offset_bottom = 48.0
 grow_horizontal = 2
 script = ExtResource("4_pbw6q")
 
-[node name="Heart1" type="TextureRect" parent="MainUI/HealthBar"]
-layout_mode = 2
-texture = ExtResource("5_jw32o")
-expand_mode = 2
+[node name="Heart1" type="AnimatedSprite2D" parent="MainUI/HealthBar"]
+position = Vector2(26.624998, 22.234373)
+scale = Vector2(0.82083327, 0.7255208)
+sprite_frames = SubResource("SpriteFrames_vy5pj")
+animation = &"Lose"
 
-[node name="Heart2" type="TextureRect" parent="MainUI/HealthBar"]
-layout_mode = 2
-texture = ExtResource("5_jw32o")
-expand_mode = 2
+[node name="Heart2" type="AnimatedSprite2D" parent="MainUI/HealthBar"]
+position = Vector2(74, 22)
+scale = Vector2(0.8333331, 0.76666665)
+sprite_frames = SubResource("SpriteFrames_bmxlf")
+animation = &"Idle"
 
-[node name="Heart3" type="TextureRect" parent="MainUI/HealthBar"]
-layout_mode = 2
-texture = ExtResource("5_jw32o")
-expand_mode = 2
+[node name="Heart3" type="AnimatedSprite2D" parent="MainUI/HealthBar"]
+position = Vector2(131, 22)
+scale = Vector2(0.7666667, 0.76666665)
+sprite_frames = SubResource("SpriteFrames_4kpch")
+animation = &"Idle"
 
 [node name="HazardSpawner" type="Node2D" parent="."]
 script = ExtResource("6_jw32o")

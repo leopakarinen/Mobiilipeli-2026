@@ -1,25 +1,29 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class HealthBar : HBoxContainer
 {
 
-	private TextureRect [] hearts;
+	private AnimatedSprite2D [] hearts;
+	private int previousLives;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		hearts = new TextureRect[]
+		hearts = new AnimatedSprite2D[]
 		{
 
-		GetNode<TextureRect>("Heart1"),
-		GetNode<TextureRect>("Heart2"),
-		GetNode<TextureRect>("Heart3")
+		GetNode<AnimatedSprite2D>("Heart1"),
+		GetNode<AnimatedSprite2D>("Heart2"),
+		GetNode<AnimatedSprite2D>("Heart3")
 		};
 
 		GameManager.Instance.LivesChanged += OnLivesChanged;
 
-		UpdateHearts(GameManager.Instance.Lives);
+		previousLives = GameManager.Instance.Lives;
+
+		UpdateHearts(previousLives);
 	}
 
     public override void _ExitTree()
@@ -29,9 +33,24 @@ public partial class HealthBar : HBoxContainer
 			GameManager.Instance.LivesChanged -= OnLivesChanged;
 		}
     }
-	private void OnLivesChanged(int lives)
+	private async void OnLivesChanged(int lives)
 	{
+		if (lives < previousLives)
+		{
+			for (int i = lives; i < previousLives; i++)
+			{
+				await PlayLoseAnimation(i);
+			}
+		}
 		UpdateHearts(lives);
+		previousLives = lives;
+
+	}
+
+	private async Task PlayLoseAnimation(int index)
+	{
+		hearts[index].Play("Lose");
+        await ToSignal(hearts[index], AnimatedSprite2D.SignalName.AnimationFinished);
 
 	}
 
@@ -39,10 +58,27 @@ public partial class HealthBar : HBoxContainer
 	{
 		for (int i = 0; i < hearts.Length; i++ )
 		{
-			hearts[i].Visible = i < lives;
+			if (i < lives)
+			{
+			hearts[i].Visible = true;
+			hearts[i].Play("Idle");
+			}
+			else
+			{
+				hearts[i].Visible = true;
+			}
 		}
 
 	}
+	  public void ResetHearts()
+    {
+        foreach (var heart in hearts)
+        {
+            heart.Visible = true;
+            heart.Play("full"); // red heart
+        }
+        previousLives = hearts.Length;
+    }
 
 
 }
