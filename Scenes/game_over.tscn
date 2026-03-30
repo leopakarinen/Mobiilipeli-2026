@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfevcuy2l05qr"]
+
+[ext_resource type="Script" uid="uid://cg2nwsnudskxc" path="res://Scripts/GameOver.cs" id="1_8fo1c"]
+[ext_resource type="Texture2D" uid="uid://bmh8o447mql80" path="res://Assets/tausta.png" id="2_ek8ke"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoghk"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="GameOver" type="Control" node_paths=PackedStringArray("_PlayAgainButton", "_QuitButton")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8fo1c")
+_PlayAgainButton = NodePath("VBoxContainer/PlayAgainButton")
+_QuitButton = NodePath("VBoxContainer/QuitButton")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 646.0
+texture = ExtResource("2_ek8ke")
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 1151.0
+offset_bottom = 653.0
+color = Color(0.09803922, 0.09803922, 0.09803922, 0.6627451)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 409.0
+offset_top = 236.0
+offset_right = 742.0
+offset_bottom = 376.0
+
+[node name="PlayAgainButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_eoghk")
+text = "PLAY  AGAIN"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_eoghk")
+text = "QUIT"
