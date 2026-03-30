@@ -4,8 +4,8 @@ public partial class FishSpawner : Node2D
 {
     [Export] private PackedScene fish_scn;
     [Export] private Marker2D[] spawn_points;
-    [Export] private float minSpawnTime = 2f;
-    [Export] private float maxSpawnTime = 5f;
+    [Export] private float minSpawnTime = 1f;
+    [Export] private float maxSpawnTime = 4f;
 
     private float time_until_spawn = 0f;
     private float nextSpawnTime = 0f;
