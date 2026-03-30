@@ -1,12 +1,26 @@
 using Godot;
 using System;
 
-public partial class Boot : Area2D
+public partial class Hazard : Area2D
 {
     private bool hit = false;
+    private Sprite2D _sprite;
+    [Export] private Texture2D[] _hazardTextures;
     public override void _Ready()
     {
+        _sprite = GetNode<Sprite2D>("Sprite2D");
+        SetRandomTexture();
         AreaEntered += OnAreaEntered;
+    }
+
+    private void SetRandomTexture()
+    {
+        if (_sprite == null || _hazardTextures == null || _hazardTextures.Length == 0)
+        return;
+
+        RandomNumberGenerator rng = new RandomNumberGenerator();
+        int index = rng.RandiRange(0, _hazardTextures.Length - 1);
+        _sprite.Texture = _hazardTextures[index];
     }
 
     public override void _Process(double delta)
