@@ -1,73 +1,76 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcvknpygijxli"]
+[gd_scene load_steps=8 format=3 uid="uid://bcvknpygijxli"]
 
 [ext_resource type="Script" uid="uid://blumju512dcuu" path="res://Scripts/MainMenu1.cs" id="1_8saeu"]
-[ext_resource type="Texture2D" uid="uid://buh00pdr7udj1" path="res://Assets/Playbutton.png" id="1_853f1"]
 [ext_resource type="Texture2D" uid="uid://660pwhdklh7h" path="res://Assets/Background2.png" id="2_df05h"]
 [ext_resource type="PackedScene" uid="uid://b111vavtgsnp3" path="res://Scenes/settings_menu.tscn" id="3_8saeu"]
-[ext_resource type="Texture2D" uid="uid://cocivmnfchxj0" path="res://Assets/kyltti versio 1.png" id="3_8um5k"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.18039216)
-shadow_size = 5
+[ext_resource type="Texture2D" uid="uid://damvo7wcqx70d" path="res://Assets/hooked taulu.png" id="3_xim88"]
+[ext_resource type="Texture2D" uid="uid://b0xvge58167g4" path="res://Assets/playbutton 1111.png" id="5_xim88"]
+[ext_resource type="Texture2D" uid="uid://cduj4ivkq671u" path="res://Assets/languagebutton 1111.png" id="6_xim88"]
+[ext_resource type="Texture2D" uid="uid://baxy12dr7lp1e" path="res://Assets/exitbutton.png" id="7_xim88"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("_PlayButton", "_Exitbutton", "_SettingsButton", "_SettingsMenu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -6.0
+offset_right = -9.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8saeu")
-_PlayButton = NodePath("VBoxContainer/PlayButton")
-_Exitbutton = NodePath("VBoxContainer/ExitButton")
-_SettingsButton = NodePath("VBoxContainer/SettingsButton")
+_PlayButton = NodePath("PlayButton")
+_Exitbutton = NodePath("ExitButton")
+_SettingsButton = NodePath("SettingsButton")
 _SettingsMenu = NodePath("SettingsMenu")
 
 [node name="Tausta" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1149.0
-offset_bottom = 645.0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 1159.0
+offset_bottom = 650.0
 texture = ExtResource("2_df05h")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="Kyltti" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = 64.0
-offset_right = 1133.0
-offset_bottom = 644.0
-texture = ExtResource("3_8um5k")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 290.0
-offset_top = 286.0
-offset_right = 556.0
-offset_bottom = 604.0
-theme_override_constants/separation = 35
-
-[node name="PlayButton" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("1_853f1")
-
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = SubResource("StyleBoxFlat_853f1")
-text = "Settings"
-
-[node name="ExitButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.043039, 0.04303924, 0.043039076, 1)
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = SubResource("StyleBoxFlat_853f1")
-text = "EXIT"
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 1138.0
+offset_bottom = 657.0
+texture = ExtResource("3_xim88")
 
 [node name="SettingsMenu" parent="." instance=ExtResource("3_8saeu")]
 visible = false
+
+[node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 282.0
+offset_top = 328.0
+offset_right = 599.0
+offset_bottom = 428.0
+texture_normal = ExtResource("5_xim88")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SettingsButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 425.0
+offset_right = 594.0
+offset_bottom = 528.0
+texture_normal = ExtResource("6_xim88")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 551.0
+offset_right = 546.0
+offset_bottom = 612.0
+texture_normal = ExtResource("7_xim88")
+ignore_texture_size = true
+stretch_mode = 0

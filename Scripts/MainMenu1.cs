@@ -4,8 +4,8 @@ using System;
 public partial class MainMenu1 : Control
 {
         [Export] private TextureButton _PlayButton;
-        [Export] private Button _Exitbutton;
-        [Export] private Button _SettingsButton;
+        [Export] private TextureButton _Exitbutton;
+        [Export] private TextureButton _SettingsButton;
 		[Export] private CanvasLayer _SettingsMenu;
 
         // options menu yleensä tehdään omaan sceneen elikkä ihan uus oma scene ja sitten copy pastetaan main menu sceneen
@@ -41,6 +41,6 @@ public partial class MainMenu1 : Control
     private void OnOptionsPressed()
     {
 		_SettingsMenu.Visible = true;
-        // when settings button is pressed settings menu will open 
+        // when settings button is pressed settings menu will open
     }
 }
