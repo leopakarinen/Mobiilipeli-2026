@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bfbpo5g7k8jm" path="res://Assets/Kossu.png" id="4_o82pi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0g2dh"]
-size = Vector2(80, 69)
+size = Vector2(102, 69)
 
 [node name="Boot" type="Area2D"]
 position = Vector2(1, -2)
@@ -19,5 +19,5 @@ scale = Vector2(0.9513127, 0.8959628)
 texture = ExtResource("2_pn62k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(126, 77.5)
+position = Vector2(129, 77.5)
 shape = SubResource("RectangleShape2D_0g2dh")

@@ -11,7 +11,7 @@ size = Vector2(203, 123)
 
 [node name="Fish" type="Area2D" groups=["Fish"]]
 script = ExtResource("3_epypp")
-_maxSpeed = 200.0
+_maxSpeed = 300.0
 _fishTextures = Array[Texture2D]([ExtResource("1_15fnf"), ExtResource("3_bce5k"), ExtResource("4_bdn1d"), ExtResource("5_orbqn")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
