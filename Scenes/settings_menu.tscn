@@ -1,40 +1,65 @@
-[gd_scene load_steps=3 format=3 uid="uid://b111vavtgsnp3"]
+[gd_scene load_steps=6 format=3 uid="uid://b111vavtgsnp3"]
 
 [ext_resource type="Script" uid="uid://dwq50t2nbe82d" path="res://Scripts/SettingsMenu.cs" id="1_icv2g"]
+[ext_resource type="Texture2D" uid="uid://bbm2t06c21hql" path="res://Assets/settings laatikko.png" id="2_8ef0u"]
+[ext_resource type="Texture2D" uid="uid://ss2nicphs6uh" path="res://Assets/suomi nappi.png" id="3_3etfd"]
+[ext_resource type="Texture2D" uid="uid://dcbuht41kwcy4" path="res://Assets/x nappi.png" id="3_7y5a0"]
+[ext_resource type="Texture2D" uid="uid://dmyj0qthnmt24" path="res://Assets/enkku nappi.png" id="5_rahb6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_124y6"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.21568628)
-shadow_size = 5
-
-[node name="SettingsMenu" type="CanvasLayer" node_paths=PackedStringArray("_CloseButton")]
+[node name="SettingsMenu" type="CanvasLayer" node_paths=PackedStringArray("_CloseButton", "_FinnishButton", "_EnglishButton")]
 script = ExtResource("1_icv2g")
-_CloseButton = NodePath("Panel/VBoxContainer/CloseButton")
+_CloseButton = NodePath("CloseButton")
+_FinnishButton = NodePath("FinnishButton")
+_EnglishButton = NodePath("EnglishButton")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 171.0
-offset_right = -280.0
+offset_left = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.5
+offset_top = -172.0
+offset_right = 282.5
+offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+texture = ExtResource("2_8ef0u")
 
-[node name="CloseButton" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.009731208, 0.011210635, 0.013930002, 1)
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = SubResource("StyleBoxFlat_124y6")
-text = "Close"
+[node name="FinnishButton" type="TextureButton" parent="."]
+offset_left = 362.0
+offset_top = 231.0
+offset_right = 541.0
+offset_bottom = 404.0
+texture_normal = ExtResource("3_3etfd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CloseButton" type="TextureButton" parent="."]
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.031000001
+offset_left = 798.0
+offset_top = 163.0
+offset_right = 805.68
+offset_bottom = 187.912
+texture_normal = ExtResource("3_7y5a0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="EnglishButton" type="TextureButton" parent="."]
+offset_left = 583.0
+offset_top = 231.0
+offset_right = 764.0
+offset_bottom = 405.0
+texture_normal = ExtResource("5_rahb6")
+ignore_texture_size = true
+stretch_mode = 0
