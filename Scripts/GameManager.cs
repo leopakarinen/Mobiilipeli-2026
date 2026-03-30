@@ -56,23 +56,10 @@ public partial class GameManager : Node
 
 		if (_lives <= 0)
 		{
-			GameOver();
+			GameOverScreen();
 		}
 	}
 
-	private void GameOver()  // when player has lost all lives game ends
-	{
-		GD.Print("Game Over");
-
-		ResetLives();
-
-		CallDeferred(nameof(ReloadScene));
-	}
-
-	private void ReloadScene()
-	{
-		GetTree().ReloadCurrentScene();
-	}
 
 	public void ResetLives()
 	{
@@ -80,5 +67,11 @@ public partial class GameManager : Node
 		_score = 0;
 
 		EmitSignal(SignalName.LivesChanged, _lives);
+	}
+
+	private void GameOverScreen()
+	{
+		GetTree().ChangeSceneToFile("res://Scenes/game_over.tscn");
+		ResetLives();
 	}
 }
