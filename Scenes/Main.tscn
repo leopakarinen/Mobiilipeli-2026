@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bla4ugmp8vthl" path="res://Scripts/HealthBar.cs" id="4_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://bye8t2ut0du1t" path="res://Assets/healthlure.png" id="5_jw32o"]
 [ext_resource type="Script" uid="uid://1b2g6ab3vtls" path="res://Scripts/HazardSpawner.cs" id="6_jw32o"]
-[ext_resource type="PackedScene" uid="uid://noqp4dsqd788" path="res://Scenes/Boot.tscn" id="7_50glp"]
+[ext_resource type="PackedScene" uid="uid://noqp4dsqd788" path="res://Scenes/Hazard.tscn" id="7_50glp"]
 
 [node name="Main" type="Node2D"]
 

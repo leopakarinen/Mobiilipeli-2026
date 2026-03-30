@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://noqp4dsqd788"]
+
+[ext_resource type="Script" uid="uid://c0hvo7cue1nqs" path="res://Scripts/Hazard.cs" id="1_rpeia"]
+[ext_resource type="Texture2D" uid="uid://es16qgowj3fv" path="res://Assets/Boot.png" id="2_pn62k"]
+[ext_resource type="Texture2D" uid="uid://63gvxu0pfoki" path="res://Assets/kalaverkko.png" id="3_gvtqr"]
+[ext_resource type="Texture2D" uid="uid://bfbpo5g7k8jm" path="res://Assets/Kossu.png" id="4_o82pi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0g2dh"]
+size = Vector2(80, 69)
+
+[node name="Boot" type="Area2D"]
+position = Vector2(1, -2)
+script = ExtResource("1_rpeia")
+_hazardTextures = Array[Texture2D]([ExtResource("2_pn62k"), ExtResource("3_gvtqr"), ExtResource("4_o82pi")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(144.86873, 99.596275)
+scale = Vector2(0.9513127, 0.8959628)
+texture = ExtResource("2_pn62k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(126, 77.5)
+shape = SubResource("RectangleShape2D_0g2dh")

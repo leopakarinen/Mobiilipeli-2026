@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7w8625clh8ps"]
 
 [ext_resource type="Script" uid="uid://1b2g6ab3vtls" path="res://Scripts/HazardSpawner.cs" id="1_q7g7u"]
-[ext_resource type="PackedScene" uid="uid://noqp4dsqd788" path="res://Scenes/Boot.tscn" id="2_qxaja"]
+[ext_resource type="PackedScene" uid="uid://noqp4dsqd788" path="res://Scenes/Hazard.tscn" id="2_qxaja"]
 
 [node name="HazardSpawner" type="Node2D"]
 script = ExtResource("1_q7g7u")
