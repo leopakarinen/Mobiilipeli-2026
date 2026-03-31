@@ -40,9 +40,12 @@ public partial class GameManager : Node
 	}
 
 	[Signal] public delegate void LivesChangedEventHandler(int lives);
+	[Signal] public delegate void ScoreChangedEventHandler(int score);
 	public void AddPoint()
 	{
 		_score += 1;
+		
+		EmitSignal(SignalName.ScoreChanged, _score);
 
 		GD.Print("Total point now: " + _score);
 	}
@@ -51,6 +54,7 @@ public partial class GameManager : Node
 		_lives -= 1;
 
 		EmitSignal(SignalName.LivesChanged, _lives);
+
 
 		GD.Print("Lives left: " + _lives);
 

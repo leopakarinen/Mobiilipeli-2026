@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyytki04um4tp"]
+[gd_scene load_steps=14 format=3 uid="uid://cyytki04um4tp"]
 
 [ext_resource type="Script" uid="uid://dxf3yhtcrypem" path="res://Scripts/FishSpawner.cs" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://d3hgx46nrxgi4" path="res://Scenes/Fish.tscn" id="2_kln2b"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://djcsavqlevjjk" path="res://Assets/peli26_lure_life1.3.png" id="6_50glp"]
 [ext_resource type="Script" uid="uid://1b2g6ab3vtls" path="res://Scripts/HazardSpawner.cs" id="6_jw32o"]
 [ext_resource type="PackedScene" uid="uid://noqp4dsqd788" path="res://Scenes/Hazard.tscn" id="7_50glp"]
+[ext_resource type="Script" uid="uid://dtgq0yu1navbg" path="res://Scenes/ScoreUi.cs" id="7_vy5pj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vy5pj"]
 animations = [{
@@ -75,6 +76,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_vy5pj"]
+font_size = 30
+font_color = Color(0, 0, 1, 1)
+
 [node name="Main" type="Node2D"]
 
 [node name="FishSpawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_points")]
@@ -93,7 +98,7 @@ position = Vector2(-41, 90)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(573, 323)
+position = Vector2(577.00006, 327)
 scale = Vector2(1.796875, 1.8027778)
 texture = ExtResource("3_jw32o")
 
@@ -127,6 +132,19 @@ position = Vector2(131, 22)
 scale = Vector2(0.7666667, 0.76666665)
 sprite_frames = SubResource("SpriteFrames_4kpch")
 animation = &"Idle"
+
+[node name="ScoreLabel" type="Label" parent="MainUI"]
+anchors_preset = -1
+anchor_left = 0.901
+anchor_top = 0.014
+anchor_right = 0.98700005
+anchor_bottom = 0.080000006
+offset_left = -15.952026
+offset_top = -0.0720005
+offset_right = 6.975952
+offset_bottom = 2.159996
+label_settings = SubResource("LabelSettings_vy5pj")
+script = ExtResource("7_vy5pj")
 
 [node name="HazardSpawner" type="Node2D" parent="."]
 script = ExtResource("6_jw32o")
