@@ -77,6 +77,8 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vy5pj"]
+font_size = 45
+font_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
 
