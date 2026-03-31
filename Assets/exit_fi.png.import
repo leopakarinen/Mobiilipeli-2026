@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ss2nicphs6uh"
-path="res://.godot/imported/suomi nappi.png-71bc980ea66fd13c9961f498187e32af.ctex"
+uid="uid://cyf1sxi7jslep"
+path="res://.godot/imported/exit_fi.png-6ddefe61a859715a18362a7672e850c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/suomi nappi.png"
-dest_files=["res://.godot/imported/suomi nappi.png-71bc980ea66fd13c9961f498187e32af.ctex"]
+source_file="res://Assets/exit_fi.png"
+dest_files=["res://.godot/imported/exit_fi.png-6ddefe61a859715a18362a7672e850c0.ctex"]
 
 [params]
 

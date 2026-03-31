@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4q6etcmj7e7s"]
+
+[ext_resource type="Script" uid="uid://cbcyjf76scxh1" path="res://Scenes/MainmenuSuomi.cs" id="1_8je7g"]
+[ext_resource type="Texture2D" uid="uid://660pwhdklh7h" path="res://Assets/Background2.png" id="2_guih5"]
+[ext_resource type="Texture2D" uid="uid://damvo7wcqx70d" path="res://Assets/hooked taulu.png" id="3_wvl5x"]
+[ext_resource type="PackedScene" uid="uid://b111vavtgsnp3" path="res://Scenes/settings_menu.tscn" id="4_nxq4j"]
+[ext_resource type="Texture2D" uid="uid://l3yknmuu5t3a" path="res://Assets/play_fi.png" id="5_1nfgv"]
+[ext_resource type="Texture2D" uid="uid://c5ku0hqsv3f3s" path="res://Assets/settings_fi.png" id="6_jlc65"]
+[ext_resource type="Texture2D" uid="uid://cyf1sxi7jslep" path="res://Assets/exit_fi.png" id="7_vmyfj"]
+
+[node name="MainmenuSuomi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8je7g")
+
+[node name="Tausta" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 1159.0
+offset_bottom = 650.0
+texture = ExtResource("2_guih5")
+
+[node name="Kyltti" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 1138.0
+offset_bottom = 651.0
+texture = ExtResource("3_wvl5x")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("4_nxq4j")]
+visible = false
+
+[node name="PlayButton_fi" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 284.0
+offset_top = 323.0
+offset_right = 599.0
+offset_bottom = 427.0
+texture_normal = ExtResource("5_1nfgv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SettingsButton_fi" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 421.0
+offset_right = 594.0
+offset_bottom = 524.0
+texture_normal = ExtResource("6_jlc65")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ExitButton_fi" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 545.0
+offset_right = 545.0
+offset_bottom = 608.0
+texture_normal = ExtResource("7_vmyfj")
+ignore_texture_size = true
+stretch_mode = 0

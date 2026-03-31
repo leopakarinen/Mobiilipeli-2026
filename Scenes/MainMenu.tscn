@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://660pwhdklh7h" path="res://Assets/Background2.png" id="2_df05h"]
 [ext_resource type="PackedScene" uid="uid://b111vavtgsnp3" path="res://Scenes/settings_menu.tscn" id="3_8saeu"]
 [ext_resource type="Texture2D" uid="uid://damvo7wcqx70d" path="res://Assets/hooked taulu.png" id="3_xim88"]
-[ext_resource type="Texture2D" uid="uid://b0xvge58167g4" path="res://Assets/playbutton 1111.png" id="5_xim88"]
-[ext_resource type="Texture2D" uid="uid://cduj4ivkq671u" path="res://Assets/languagebutton 1111.png" id="6_xim88"]
-[ext_resource type="Texture2D" uid="uid://baxy12dr7lp1e" path="res://Assets/exitbutton.png" id="7_xim88"]
+[ext_resource type="Texture2D" uid="uid://b0xvge58167g4" path="res://Assets/play_en.png" id="5_xim88"]
+[ext_resource type="Texture2D" uid="uid://cduj4ivkq671u" path="res://Assets/settings_en.png" id="6_xim88"]
+[ext_resource type="Texture2D" uid="uid://baxy12dr7lp1e" path="res://Assets/exit_en.png" id="7_xim88"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("_PlayButton", "_Exitbutton", "_SettingsButton", "_SettingsMenu")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("_PlayButton", "_ExitButton", "_SettingsButton", "_SettingsMenu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8saeu")
 _PlayButton = NodePath("PlayButton")
-_Exitbutton = NodePath("ExitButton")
+_ExitButton = NodePath("ExitButton")
 _SettingsButton = NodePath("SettingsButton")
 _SettingsMenu = NodePath("SettingsMenu")
 
@@ -38,7 +38,7 @@ layout_mode = 0
 offset_left = 5.0
 offset_top = 77.0
 offset_right = 1138.0
-offset_bottom = 657.0
+offset_bottom = 651.0
 texture = ExtResource("3_xim88")
 
 [node name="SettingsMenu" parent="." instance=ExtResource("3_8saeu")]
@@ -47,30 +47,30 @@ visible = false
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 282.0
-offset_top = 326.0
-offset_right = 597.0
-offset_bottom = 430.0
+offset_left = 284.0
+offset_top = 323.0
+offset_right = 599.0
+offset_bottom = 427.0
 texture_normal = ExtResource("5_xim88")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="SettingsButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 290.0
-offset_top = 425.0
+offset_left = 294.0
+offset_top = 421.0
 offset_right = 594.0
-offset_bottom = 528.0
+offset_bottom = 524.0
 texture_normal = ExtResource("6_xim88")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ExitButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 333.0
-offset_top = 551.0
-offset_right = 546.0
-offset_bottom = 612.0
+offset_left = 332.0
+offset_top = 545.0
+offset_right = 545.0
+offset_bottom = 608.0
 texture_normal = ExtResource("7_xim88")
 ignore_texture_size = true
 stretch_mode = 0

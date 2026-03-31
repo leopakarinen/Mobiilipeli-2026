@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dwq50t2nbe82d" path="res://Scripts/SettingsMenu.cs" id="1_icv2g"]
 [ext_resource type="Texture2D" uid="uid://bbm2t06c21hql" path="res://Assets/settings laatikko.png" id="2_8ef0u"]
-[ext_resource type="Texture2D" uid="uid://ss2nicphs6uh" path="res://Assets/suomi nappi.png" id="3_3etfd"]
+[ext_resource type="Texture2D" uid="uid://ss2nicphs6uh" path="res://Assets/suomi_fi.png" id="3_3etfd"]
 [ext_resource type="Texture2D" uid="uid://dcbuht41kwcy4" path="res://Assets/x nappi.png" id="3_7y5a0"]
-[ext_resource type="Texture2D" uid="uid://dmyj0qthnmt24" path="res://Assets/enkku nappi.png" id="5_rahb6"]
+[ext_resource type="Texture2D" uid="uid://dmyj0qthnmt24" path="res://Assets/english_en.png" id="5_rahb6"]
 
 [node name="SettingsMenu" type="CanvasLayer" node_paths=PackedStringArray("_CloseButton", "_FinnishButton", "_EnglishButton")]
 script = ExtResource("1_icv2g")

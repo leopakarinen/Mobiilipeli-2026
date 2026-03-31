@@ -3,18 +3,18 @@ using System;
 
 public partial class SettingsMenu : CanvasLayer
 {
-    [Export] private TextureButton _CloseButton; // liitä Inspectorissa CloseButton tähän
-    [Export] private TextureButton _FinnishButton;
-    [Export] private TextureButton _EnglishButton;
+    // Signal, jota MainMenu kuuntelee
+    [Signal] public delegate void LanguageChangedEventHandler(string lang);
 
+    [Export] private TextureButton _CloseButton;      // sulje menu
+    [Export] private TextureButton _FinnishButton;    // suomi
+    [Export] private TextureButton _EnglishButton;    // englanti
 
     public override void _Ready()
     {
-        // Liitetään CloseButton piilottamaan koko SettingsMenu
+        // Liitetään napit
         _CloseButton.Pressed += OnClosePressed;
-
         _FinnishButton.Pressed += OnFinnishPressed;
-
         _EnglishButton.Pressed += OnEnglishPressed;
 
         // Piilotetaan SettingsMenu aluksi
@@ -25,12 +25,18 @@ public partial class SettingsMenu : CanvasLayer
     {
         Visible = false;
     }
+
     private void OnFinnishPressed()
     {
-        Visible = false;
+        // Lähetä signal MainMenu:lle
+        EmitSignal("LanguageChanged", "fi");
+        Visible = false; // sulje menu
     }
+
     private void OnEnglishPressed()
     {
-        Visible = false;
+        // Lähetä signal MainMenu:lle
+        EmitSignal("LanguageChanged", "en");
+        Visible = false; // sulje menu
     }
 }

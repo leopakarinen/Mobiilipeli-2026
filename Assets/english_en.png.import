@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmyj0qthnmt24"
-path="res://.godot/imported/enkku nappi.png-13770a1b640deabacd9fdcb1eab803ef.ctex"
+path="res://.godot/imported/english_en.png-ca43e8d55129d2f0fdc0f6cf2307f943.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/enkku nappi.png"
-dest_files=["res://.godot/imported/enkku nappi.png-13770a1b640deabacd9fdcb1eab803ef.ctex"]
+source_file="res://Assets/english_en.png"
+dest_files=["res://.godot/imported/english_en.png-ca43e8d55129d2f0fdc0f6cf2307f943.ctex"]
 
 [params]
 

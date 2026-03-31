@@ -3,44 +3,58 @@ using System;
 
 public partial class MainMenu1 : Control
 {
-        [Export] private TextureButton _PlayButton;
-        [Export] private TextureButton _Exitbutton;
-        [Export] private TextureButton _SettingsButton;
-		[Export] private CanvasLayer _SettingsMenu;
+    [Export] private TextureButton _PlayButton;
+    [Export] private TextureButton _ExitButton;
+    [Export] private TextureButton _SettingsButton;
+    [Export] private SettingsMenu _SettingsMenu; // viittaus erilliseen CanvasLayer-sceneen
 
-        // options menu yleensä tehdään omaan sceneen elikkä ihan uus oma scene ja sitten copy pastetaan main menu sceneen
-        // exporttaa sekin ja kato mikä on se root node
-        // tässä esimerkissä se on canvaslayer
-
+    private string currentLang = "fi"; // oletuskieli
 
     public override void _Ready()
     {
+        // Main Menu napit
         _PlayButton.Pressed += OnPlayButtonPressed;
-        _Exitbutton.Pressed += OnQuitPressed;
+        _ExitButton.Pressed += OnQuitPressed;
         _SettingsButton.Pressed += OnOptionsPressed;
 
-        // buttons are synced
+        // Liitetään SettingsMenu:n signal
+        _SettingsMenu.LanguageChanged += OnLanguageChanged;
 
-		_SettingsMenu.Visible = false;
+        // Piilotetaan SettingsMenu aluksi
+        _SettingsMenu.Visible = false;
+
+        // Päivitä napit oletuskielelle
+        currentLang = "fi";  // oletus suomi
+        UpdateImages(currentLang);
+    }
+
+    // Päivittää kaikkien nappien kuvat valitun kielen mukaan
+    private void UpdateImages(string lang)
+    {
+        _PlayButton.TextureNormal = GD.Load<Texture2D>($"res://Assets/play_{lang}.png");
+        _ExitButton.TextureNormal = GD.Load<Texture2D>($"res://Assets/exit_{lang}.png");
+        _SettingsButton.TextureNormal = GD.Load<Texture2D>($"res://Assets/settings_{lang}.png");
+    }
+
+    // SettingsMenu ilmoittaa signalilla
+    private void OnLanguageChanged(string lang)
+    {   GD.Print("Kieli vaihdettiin: ", lang);
+        currentLang = lang;
+        UpdateImages(lang);
     }
 
     private void OnPlayButtonPressed()
     {
         GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
-        // changes scene
     }
 
     private void OnQuitPressed()
     {
         GetTree().Quit();
-
-        // closes the game
-
     }
 
     private void OnOptionsPressed()
     {
-		_SettingsMenu.Visible = true;
-        // when settings button is pressed settings menu will open
+        _SettingsMenu.Visible = !_SettingsMenu.Visible; // toggle näkyvyys
     }
 }
