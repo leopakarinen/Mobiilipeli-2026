@@ -3,6 +3,7 @@ using System;
 
 public partial class Hazard : Area2D
 {
+    [Export] private float _speed = 100.0f;
     private bool hit = false;
     private Sprite2D _sprite;
     [Export] private Texture2D[] _hazardTextures;
@@ -25,7 +26,7 @@ public partial class Hazard : Area2D
 
     public override void _Process(double delta)
     {
-        GlobalPosition += new  Vector2(0, 100 * (float)delta);
+        GlobalPosition += new  Vector2(0, _speed * (float)delta);
     }
     public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
     {

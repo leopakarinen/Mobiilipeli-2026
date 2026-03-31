@@ -39,7 +39,7 @@ public partial class FishSpawner : Node2D
         Fish fish = fish_scn.Instantiate<Fish>();
         AddChild(fish);
 
-        fish.GlobalPosition = spawnPoint.GlobalPosition;
+        fish.SetSpawnPosition(spawnPoint.GlobalPosition); 
 
         int direction = spawnPoint.Name.ToString().Contains("Left") ? 1 : -1;
         fish.SetDirection(direction);
