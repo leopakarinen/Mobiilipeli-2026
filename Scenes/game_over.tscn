@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfevcuy2l05qr"]
+[gd_scene load_steps=6 format=3 uid="uid://bfevcuy2l05qr"]
 
 [ext_resource type="Script" uid="uid://cg2nwsnudskxc" path="res://Scripts/GameOver.cs" id="1_8fo1c"]
 [ext_resource type="Texture2D" uid="uid://bmh8o447mql80" path="res://Assets/tausta.png" id="2_ek8ke"]
 [ext_resource type="Texture2D" uid="uid://bjabgo415rfn3" path="res://Assets/mökökissa.png" id="3_ek8ke"]
+[ext_resource type="Texture2D" uid="uid://bf5qg2nh5s2i5" path="res://Assets/peli26_game_over1.png" id="4_eoghk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoghk"]
 corner_radius_top_left = 16
@@ -10,12 +11,13 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="GameOver" type="Control" node_paths=PackedStringArray("_PlayAgainButton", "_QuitButton")]
+[node name="GameOver" type="Control" node_paths=PackedStringArray("_PlayAgainButton", "_QuitButton", "_MainmenuButton")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_8fo1c")
 _PlayAgainButton = NodePath("VBoxContainer/PlayAgainButton")
 _QuitButton = NodePath("VBoxContainer/QuitButton")
+_MainmenuButton = NodePath("VBoxContainer/MainmenuButton")
 
 [node name="Tausta" type="TextureRect" parent="."]
 layout_mode = 0
@@ -42,16 +44,29 @@ texture = ExtResource("3_ek8ke")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 offset_left = 357.0
-offset_top = 249.0
+offset_top = 335.0
 offset_right = 773.0
-offset_bottom = 376.0
+offset_bottom = 397.0
 
 [node name="PlayAgainButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_eoghk")
 text = "PLAY  AGAIN"
 
+[node name="MainmenuButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_eoghk")
+text = "MAIN MENU"
+
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_eoghk")
 text = "QUIT"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 27.0
+offset_right = 794.0
+offset_bottom = 337.0
+texture = ExtResource("4_eoghk")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b4q6etcmj7e7s"]
 
-[ext_resource type="Script" uid="uid://cbcyjf76scxh1" path="res://Scenes/MainmenuSuomi.cs" id="1_8je7g"]
+[ext_resource type="Script" uid="uid://cbcyjf76scxh1" path="res://Scripts/MainmenuSuomi.cs" id="1_8je7g"]
 [ext_resource type="Texture2D" uid="uid://660pwhdklh7h" path="res://Assets/Background2.png" id="2_guih5"]
 [ext_resource type="Texture2D" uid="uid://damvo7wcqx70d" path="res://Assets/hooked taulu.png" id="3_wvl5x"]
 [ext_resource type="PackedScene" uid="uid://b111vavtgsnp3" path="res://Scenes/settings_menu.tscn" id="4_nxq4j"]
