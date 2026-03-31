@@ -3,7 +3,14 @@ using Godot;
 public partial class Fish : Area2D
 {
     [Export] private float _maxSpeed = 60.0f;
+    [Export] private float _minSpeed = 120.0f;
+    [Export] private float _maxRandomSpeed = 200.0f;
+    [Export] private float _wobbleAmount = 10f;
+    [Export] private float _wobbleSpeed = 2f;
     [Export] private Texture2D[] _fishTextures;
+
+    private float _time = 0f;
+    private float _baseY;
     private int _direction = 1;
 
     private Sprite2D _fish;
@@ -11,16 +18,35 @@ public partial class Fish : Area2D
     public override void _Ready()
     {
         _fish = GetNode<Sprite2D>("Sprite2D");
+
+        RandomNumberGenerator rng = new RandomNumberGenerator();
+        _maxSpeed = rng.RandfRange(_minSpeed, _maxRandomSpeed);
+
         SetRandomTexture();
+
         UpdateFlip();
+    }
+
+    public void SetSpawnPosition(Vector2 position)
+    {
+        GlobalPosition = position;
+        _baseY = position.Y;
     }
 
     public override void _Process(double delta)
 	{
-    Vector2 movement = new Vector2(_direction, 0) * _maxSpeed * (float)delta;
-    GlobalPosition += movement;
+    _time += (float)delta;
+
+    //horizontal movement
+    float moveX = _direction * _maxSpeed * (float)delta;
+
+    //vertical wobble
+    float wobbleY = Mathf.Sin(_time * _wobbleSpeed) * _wobbleAmount;
+
+    GlobalPosition = new Godot.Vector2 (GlobalPosition.X + moveX, _baseY + wobbleY);
 
     Vector2 screenSize = GetViewportRect().Size;
+
 
     if (GlobalPosition.X < -80 || GlobalPosition.X > screenSize.X + 80) //Checks where a fish is destroyed.
     {

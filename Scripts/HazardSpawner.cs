@@ -28,7 +28,7 @@ public partial class HazardSpawner : Node2D
 		AddChild(hazard);
 
 		Vector2 screenSize = GetViewportRect().Size;
-		float randomX = rng.RandfRange(0, screenSize.X);
+		float randomX = rng.RandfRange(250, 900);
 
 		hazard.GlobalPosition = new Vector2(randomX, -100);
 	}

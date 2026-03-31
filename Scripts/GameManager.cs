@@ -56,7 +56,7 @@ public partial class GameManager : Node
 
 		if (_lives <= 0)
 		{
-			GameOverScreen();
+			CallDeferred(nameof(GameOverScreen));
 		}
 	}
 
