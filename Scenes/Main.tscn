@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyytki04um4tp"]
+[gd_scene load_steps=15 format=3 uid="uid://cyytki04um4tp"]
 
 [ext_resource type="Script" uid="uid://dxf3yhtcrypem" path="res://Scripts/FishSpawner.cs" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://d3hgx46nrxgi4" path="res://Scenes/Fish.tscn" id="2_kln2b"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://djcsavqlevjjk" path="res://Assets/peli26_lure_life1.3.png" id="6_50glp"]
 [ext_resource type="Script" uid="uid://1b2g6ab3vtls" path="res://Scripts/HazardSpawner.cs" id="6_jw32o"]
 [ext_resource type="PackedScene" uid="uid://noqp4dsqd788" path="res://Scenes/Hazard.tscn" id="7_50glp"]
+[ext_resource type="FontFile" uid="uid://bmqar5ty4npte" path="res://Assets/font/pixel_3/pixel.ttf" id="7_bmxlf"]
 [ext_resource type="Script" uid="uid://dtgq0yu1navbg" path="res://Scripts/ScoreUi.cs" id="7_vy5pj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vy5pj"]
@@ -77,7 +78,8 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vy5pj"]
-font_size = 45
+font = ExtResource("7_bmxlf")
+font_size = 30
 font_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
