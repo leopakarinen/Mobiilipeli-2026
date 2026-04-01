@@ -76,7 +76,7 @@ public partial class Fish : Area2D
 
      private void SetRandomTexture()
     {
-        if (_fish == null || _fishTextures == null || _fishTextures.Length < 4)
+        if (_fish == null || _fishTextures == null || _fishTextures.Length < 5)
             return;
 
         RandomNumberGenerator rng = new RandomNumberGenerator();
@@ -90,8 +90,10 @@ public partial class Fish : Area2D
             index = 1; //common
         else if (roll < 0.80f)
             index = 2; //common
-        else 
+        else if (roll < 0.90f)
             index = 3; //uncommon
+        else
+            index = 4; //rare fish
 
         _fish.Texture = _fishTextures[index];
 
@@ -108,6 +110,9 @@ public partial class Fish : Area2D
                 break;
             case 3:
                 _points = 3;
+                break;
+            case 4:
+                _points = 10;
                 break;
         }
     }
