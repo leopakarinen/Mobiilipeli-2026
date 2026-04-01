@@ -17,9 +17,15 @@ public partial class Fish : Area2D
 
     private Sprite2D _fish;
 
+    private AudioStreamPlayer2D _clickSound;
+
     public override void _Ready()
     {
         _fish = GetNode<Sprite2D>("Sprite2D");
+
+        _clickSound = GetNode<AudioStreamPlayer2D>("ClickSound");
+
+        _clickSound.Bus = "SFX";
 
         RandomNumberGenerator rng = new RandomNumberGenerator();
         _maxSpeed = rng.RandfRange(_minSpeed, _maxRandomSpeed);
@@ -119,11 +125,16 @@ public partial class Fish : Area2D
 
 
 	//Checks if a fish is pressed and adds a point to the player.
-    public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
+    public override async void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
     {
         if (@event is InputEventMouseButton mouse && mouse.Pressed)
         {
+            _clickSound.Play();
+
             GameManager.Instance.AddPoints(_points);
+
+            await ToSignal(_clickSound, "finished");
+
             QueueFree();
         }
     }
