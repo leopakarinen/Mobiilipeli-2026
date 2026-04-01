@@ -7,6 +7,7 @@ public partial class MainMenu1 : Control
     [Export] private TextureButton _ExitButton;
     [Export] private TextureButton _SettingsButton;
     [Export] private SettingsMenu _SettingsMenu; // viittaus erilliseen CanvasLayer-sceneen
+    [Export] private Tutorialscreen _TutorialScreen;
 
     private string currentLang = "fi"; // oletuskieli
 
@@ -16,6 +17,7 @@ public partial class MainMenu1 : Control
         _PlayButton.Pressed += OnPlayButtonPressed;
         _ExitButton.Pressed += OnQuitPressed;
         _SettingsButton.Pressed += OnOptionsPressed;
+        _TutorialScreen.TutorialClosed += OnTutorialClosed;
 
         // Liitetään SettingsMenu:n signal
         _SettingsMenu.LanguageChanged += OnLanguageChanged;
@@ -45,8 +47,13 @@ public partial class MainMenu1 : Control
 
     private void OnPlayButtonPressed()
     {
-        GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
+        _TutorialScreen.Visible = true;
     }
+
+    private void OnTutorialClosed()
+{
+    GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
+}
 
     private void OnQuitPressed()
     {

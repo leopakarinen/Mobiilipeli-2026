@@ -1,23 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfevcuy2l05qr"]
+[gd_scene load_steps=9 format=3 uid="uid://bfevcuy2l05qr"]
 
 [ext_resource type="Script" uid="uid://cg2nwsnudskxc" path="res://Scripts/GameOver.cs" id="1_8fo1c"]
 [ext_resource type="Texture2D" uid="uid://bmh8o447mql80" path="res://Assets/tausta.png" id="2_ek8ke"]
 [ext_resource type="Texture2D" uid="uid://bjabgo415rfn3" path="res://Assets/mökökissa.png" id="3_ek8ke"]
 [ext_resource type="Texture2D" uid="uid://bf5qg2nh5s2i5" path="res://Assets/peli26_game_over1.png" id="4_eoghk"]
+[ext_resource type="Texture2D" uid="uid://bstthfa5q6swn" path="res://Assets/gamerover_ taulu runko.png" id="5_gjtdd"]
+[ext_resource type="Texture2D" uid="uid://dkdvoiklu6y0p" path="res://Assets/retry_en.png" id="6_uylih"]
+[ext_resource type="Texture2D" uid="uid://buxjttyq0lgl6" path="res://Assets/menu_en.png" id="7_3817r"]
+[ext_resource type="Texture2D" uid="uid://c0frgd7gy4rl6" path="res://Assets/quit_en.png" id="8_mitgx"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoghk"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[node name="GameOver" type="Control" node_paths=PackedStringArray("_PlayAgainButton", "_QuitButton", "_MainmenuButton")]
+[node name="GameOver" type="Control" node_paths=PackedStringArray("_RetryButton", "_QuitButton", "_MenuButton")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_8fo1c")
-_PlayAgainButton = NodePath("VBoxContainer/PlayAgainButton")
-_QuitButton = NodePath("VBoxContainer/QuitButton")
-_MainmenuButton = NodePath("VBoxContainer/MainmenuButton")
+_RetryButton = NodePath("RetryButton")
+_QuitButton = NodePath("QuitButton")
+_MenuButton = NodePath("MenuButton")
 
 [node name="Tausta" type="TextureRect" parent="."]
 layout_mode = 0
@@ -41,28 +39,6 @@ offset_right = 1152.0
 offset_bottom = 650.0
 texture = ExtResource("3_ek8ke")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-offset_left = 357.0
-offset_top = 335.0
-offset_right = 773.0
-offset_bottom = 397.0
-
-[node name="PlayAgainButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_eoghk")
-text = "PLAY  AGAIN"
-
-[node name="MainmenuButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_eoghk")
-text = "MAIN MENU"
-
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_eoghk")
-text = "QUIT"
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 341.0
@@ -70,3 +46,42 @@ offset_top = 27.0
 offset_right = 794.0
 offset_bottom = 337.0
 texture = ExtResource("4_eoghk")
+
+[node name="Kyltti" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 164.0
+offset_right = 1132.0
+offset_bottom = 647.0
+texture = ExtResource("5_gjtdd")
+expand_mode = 1
+
+[node name="RetryButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 365.0
+offset_right = 677.0
+offset_bottom = 467.0
+texture_normal = ExtResource("6_uylih")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MenuButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 451.0
+offset_right = 672.0
+offset_bottom = 545.0
+texture_normal = ExtResource("7_3817r")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 554.0
+offset_right = 655.0
+offset_bottom = 607.0
+texture_normal = ExtResource("8_mitgx")
+ignore_texture_size = true
+stretch_mode = 0
