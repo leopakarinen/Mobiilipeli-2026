@@ -9,6 +9,8 @@ public partial class Fish : Area2D
     [Export] private float _wobbleSpeed = 2f;
     [Export] private Texture2D[] _fishTextures;
 
+    private int _points = 1;
+
     private float _time = 0f;
     private float _baseY;
     private int _direction = 1;
@@ -74,12 +76,40 @@ public partial class Fish : Area2D
 
      private void SetRandomTexture()
     {
-        if (_fish == null || _fishTextures == null || _fishTextures.Length == 0)
+        if (_fish == null || _fishTextures == null || _fishTextures.Length < 4)
             return;
 
         RandomNumberGenerator rng = new RandomNumberGenerator();
-        int index = rng.RandiRange(0, _fishTextures.Length - 1);
+        float roll = rng.Randf();
+
+        int index;
+
+        if (roll < 0.35f)
+            index = 0; //common
+        else if (roll < 0.60f)
+            index = 1; //common
+        else if (roll < 0.80f)
+            index = 2; //common
+        else 
+            index = 3; //uncommon
+
         _fish.Texture = _fishTextures[index];
+
+        switch (index)
+        {
+            case 0:
+                _points = 1;
+                break;
+            case 1:
+                _points = 2;
+                break;
+            case 2:
+                _points = 2;
+                break;
+            case 3:
+                _points = 3;
+                break;
+        }
     }
 
 
@@ -88,7 +118,7 @@ public partial class Fish : Area2D
     {
         if (@event is InputEventMouseButton mouse && mouse.Pressed)
         {
-            GameManager.Instance.AddPoint();
+            GameManager.Instance.AddPoints(_points);
             QueueFree();
         }
     }

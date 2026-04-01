@@ -41,13 +41,13 @@ public partial class GameManager : Node
 
 	[Signal] public delegate void LivesChangedEventHandler(int lives);
 	[Signal] public delegate void ScoreChangedEventHandler(int score);
-	public void AddPoint()
+	public void AddPoints(int amount)
 	{
-		_score += 1;
-		
+		_score += amount;
+
 		EmitSignal(SignalName.ScoreChanged, _score);
 
-		GD.Print("Total point now: " + _score);
+		GD.Print("Gained " + amount +  " points. Total score now: " + _score);
 	}
 	public void LoseLife()   // new metod that tells if player loses a life
 	{
@@ -71,6 +71,7 @@ public partial class GameManager : Node
 		_score = 0;
 
 		EmitSignal(SignalName.LivesChanged, _lives);
+		EmitSignal(SignalName.ScoreChanged, _score);
 	}
 
 	private void GameOverScreen()

@@ -90,13 +90,13 @@ fish_scn = ExtResource("2_kln2b")
 spawn_points = [NodePath("SpawnLeft1"), NodePath("SpawnRight1"), NodePath("SpawnLeft2")]
 
 [node name="SpawnLeft1" type="Marker2D" parent="FishSpawner"]
-position = Vector2(-45, 601)
+position = Vector2(-45, 548)
 
 [node name="SpawnRight1" type="Marker2D" parent="FishSpawner"]
 position = Vector2(1189, 339)
 
 [node name="SpawnLeft2" type="Marker2D" parent="FishSpawner"]
-position = Vector2(-46, 195)
+position = Vector2(-46, 170)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
