@@ -3,24 +3,24 @@ using System;
 
 public partial class GameOver : Control
 {
-    [Export] private Button _PlayAgainButton;
-    [Export] private Button _QuitButton;
-    [Export] private Button _MainmenuButton;
+    [Export] private TextureButton _RetryButton;
+    [Export] private TextureButton _QuitButton;
+    [Export] private TextureButton _MenuButton;
 
     public override void _Ready()
     {
-        _PlayAgainButton.Pressed += OnPlayAgainPressed;
+        _RetryButton.Pressed += OnRetryPressed;
         _QuitButton.Pressed += OnQuitPressed;
-        _MainmenuButton.Pressed += OnMainmenuButtonPressed;
+        _MenuButton.Pressed += OnMenuPressed;
     }
 
-    private void OnPlayAgainPressed()
+    private void OnRetryPressed()
     {
         GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
         // restarts game
     }
 
-private void OnMainmenuButtonPressed()
+private void OnMenuPressed()
     {
         GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
         // goes to main menu

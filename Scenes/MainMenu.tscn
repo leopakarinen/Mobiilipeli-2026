@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcvknpygijxli"]
+[gd_scene load_steps=9 format=3 uid="uid://bcvknpygijxli"]
 
 [ext_resource type="Script" uid="uid://blumju512dcuu" path="res://Scripts/MainMenu1.cs" id="1_8saeu"]
 [ext_resource type="Texture2D" uid="uid://dlf4325s4bbfy" path="res://Assets/mainmenu_tausta.png" id="2_xim88"]
@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b0xvge58167g4" path="res://Assets/play_en.png" id="5_xim88"]
 [ext_resource type="Texture2D" uid="uid://cduj4ivkq671u" path="res://Assets/settings_en.png" id="6_xim88"]
 [ext_resource type="Texture2D" uid="uid://baxy12dr7lp1e" path="res://Assets/exit_en.png" id="7_xim88"]
+[ext_resource type="PackedScene" uid="uid://td02sbxywgan" path="res://Scenes/tutorialscreen.tscn" id="8_koqhg"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("_PlayButton", "_ExitButton", "_SettingsButton", "_SettingsMenu")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("_PlayButton", "_ExitButton", "_SettingsButton", "_SettingsMenu", "_TutorialScreen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,6 +25,7 @@ _PlayButton = NodePath("PlayButton")
 _ExitButton = NodePath("ExitButton")
 _SettingsButton = NodePath("SettingsButton")
 _SettingsMenu = NodePath("SettingsMenu")
+_TutorialScreen = NodePath("Tutorialscreen")
 
 [node name="Tausta" type="TextureRect" parent="."]
 layout_mode = 0
@@ -74,3 +76,6 @@ offset_bottom = 608.0
 texture_normal = ExtResource("7_xim88")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Tutorialscreen" parent="." instance=ExtResource("8_koqhg")]
+visible = false
