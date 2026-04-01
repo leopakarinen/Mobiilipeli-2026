@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bcvknpygijxli"]
 
 [ext_resource type="Script" uid="uid://blumju512dcuu" path="res://Scripts/MainMenu1.cs" id="1_8saeu"]
-[ext_resource type="Texture2D" uid="uid://660pwhdklh7h" path="res://Assets/Background2.png" id="2_df05h"]
+[ext_resource type="Texture2D" uid="uid://dlf4325s4bbfy" path="res://Assets/mainmenu_tausta.png" id="2_xim88"]
 [ext_resource type="PackedScene" uid="uid://b111vavtgsnp3" path="res://Scenes/settings_menu.tscn" id="3_8saeu"]
 [ext_resource type="Texture2D" uid="uid://damvo7wcqx70d" path="res://Assets/hooked taulu.png" id="3_xim88"]
 [ext_resource type="Texture2D" uid="uid://b0xvge58167g4" path="res://Assets/play_en.png" id="5_xim88"]
@@ -31,7 +31,7 @@ offset_left = 10.0
 offset_top = 5.0
 offset_right = 1159.0
 offset_bottom = 650.0
-texture = ExtResource("2_df05h")
+texture = ExtResource("2_xim88")
 
 [node name="Kyltti" type="TextureRect" parent="."]
 layout_mode = 0
