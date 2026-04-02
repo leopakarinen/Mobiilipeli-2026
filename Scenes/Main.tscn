@@ -79,7 +79,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_vy5pj"]
 font = ExtResource("7_bmxlf")
-font_size = 30
+font_size = 40
 font_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
@@ -137,14 +137,14 @@ animation = &"Idle"
 
 [node name="ScoreLabel" type="Label" parent="MainUI"]
 anchors_preset = -1
-anchor_left = 0.81100005
+anchor_left = 0.873
 anchor_top = 0.014
 anchor_right = 0.98700005
-anchor_bottom = 0.083000004
-offset_left = -0.2720337
+anchor_bottom = 0.085
+offset_left = 0.30395508
 offset_top = -8.0720005
 offset_right = 12.975952
-offset_bottom = 0.21599579
+offset_bottom = -0.08000183
 label_settings = SubResource("LabelSettings_vy5pj")
 script = ExtResource("7_vy5pj")
 

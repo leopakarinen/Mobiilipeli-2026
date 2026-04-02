@@ -26,7 +26,7 @@ public partial class ScoreUi : Label
 
 	private void OnScoreChanged(int score)
 	{
-		Text = "Score: " + score;
+		Text = " " + score;
 
 	}
 

@@ -7,9 +7,13 @@ public partial class Hazard : Area2D
     private bool hit = false;
     private Sprite2D _sprite;
     [Export] private Texture2D[] _hazardTextures;
+
+    private AudioStreamPlayer2D _damageSound;
     public override void _Ready()
     {
         _sprite = GetNode<Sprite2D>("Sprite2D");
+        _damageSound = GetNode<AudioStreamPlayer2D>("DamageSound");
+        _damageSound.Bus = "SFX";
         SetRandomTexture();
         AreaEntered += OnAreaEntered;
     }
@@ -28,16 +32,20 @@ public partial class Hazard : Area2D
     {
         GlobalPosition += new  Vector2(0, _speed * (float)delta);
     }
-    public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
+    public override async void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
     {
         if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
         {
             GameManager.Instance.LoseLife();  // Vähennetään pelaajan elämää
+
+            _damageSound.Play();
+            await ToSignal(_damageSound, "finished");
+
             QueueFree();                      // Poistetaan saapas pelistä
         }
     }
 
-    public void OnAreaEntered (Node Area)
+    public async void OnAreaEntered (Node Area)
     {
         if (hit)
             return;
@@ -47,7 +55,13 @@ public partial class Hazard : Area2D
 
             GameManager.Instance.LoseLife();
             GD.Print("Hit a fish");
+
+            _damageSound.Play();
+
             Area.CallDeferred("queue_free");
+
+            await ToSignal(_damageSound, "finished");
+
             CallDeferred("queue_free");
         }
     }
