@@ -9,30 +9,29 @@ public partial class MainMenu1 : Control
     [Export] private SettingsMenu _SettingsMenu; // viittaus erilliseen CanvasLayer-sceneen
     [Export] private Tutorialscreen _TutorialScreen;
 
-    private string currentLang = "fi"; // oletuskieli
-
     public override void _Ready()
     {
-        // Main Menu napit
+        // Liitä napit
         _PlayButton.Pressed += OnPlayButtonPressed;
         _ExitButton.Pressed += OnQuitPressed;
         _SettingsButton.Pressed += OnOptionsPressed;
         _TutorialScreen.TutorialClosed += OnTutorialClosed;
 
-        // Liitetään SettingsMenu:n signal
+        // Liitä SettingsMenu:n signal
         _SettingsMenu.LanguageChanged += OnLanguageChanged;
 
         // Piilotetaan SettingsMenu aluksi
         _SettingsMenu.Visible = false;
 
-        // Päivitä napit oletuskielelle
-        currentLang = "fi";  // oletus suomi
-        UpdateImages(currentLang);
+        // Päivitä napit Global-kielen mukaan
+        UpdateImages();
     }
 
-    // Päivittää kaikkien nappien kuvat valitun kielen mukaan
-    private void UpdateImages(string lang)
+    // Päivittää kaikkien nappien kuvat Global.CurrentLang:n mukaan
+    private void UpdateImages()
     {
+        string lang = Global.CurrentLang; // 🔥 käytetään Globalia
+
         _PlayButton.TextureNormal = GD.Load<Texture2D>($"res://Assets/play_{lang}.png");
         _ExitButton.TextureNormal = GD.Load<Texture2D>($"res://Assets/exit_{lang}.png");
         _SettingsButton.TextureNormal = GD.Load<Texture2D>($"res://Assets/settings_{lang}.png");
@@ -40,9 +39,10 @@ public partial class MainMenu1 : Control
 
     // SettingsMenu ilmoittaa signalilla
     private void OnLanguageChanged(string lang)
-    {   GD.Print("Kieli vaihdettiin: ", lang);
-        currentLang = lang;
-        UpdateImages(lang);
+    {
+        GD.Print("Kieli vaihdettiin: ", lang);
+        Global.CurrentLang = lang; // 🔥 tallennetaan Globaliin
+        UpdateImages();            // päivitä napit heti
     }
 
     private void OnPlayButtonPressed()
@@ -51,9 +51,9 @@ public partial class MainMenu1 : Control
     }
 
     private void OnTutorialClosed()
-{
-    GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
-}
+    {
+        GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
+    }
 
     private void OnQuitPressed()
     {
