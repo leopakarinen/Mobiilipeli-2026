@@ -27,7 +27,7 @@ public partial class Fish : Area2D
 
         _clickSound.Bus = "SFX";
 
-        RandomNumberGenerator rng = new RandomNumberGenerator();
+        RandomNumberGenerator rng = new RandomNumberGenerator();  // Sets a random speed for the fish. Value between _minSpeed - _maxRandomSpeed
         _maxSpeed = rng.RandfRange(_minSpeed, _maxRandomSpeed);
 
         SetRandomTexture();
@@ -88,7 +88,7 @@ public partial class Fish : Area2D
         RandomNumberGenerator rng = new RandomNumberGenerator();
         float roll = rng.Randf();
 
-        int index;
+        int index;  //Spawning chance for each type of fish
 
         if (roll < 0.35f)
             index = 0; //common
@@ -103,7 +103,7 @@ public partial class Fish : Area2D
 
         _fish.Texture = _fishTextures[index];
 
-        switch (index)
+        switch (index) //Point values for fish
         {
             case 0:
                 _points = 1;

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://clhv4wocp6pfu"]
+
+[ext_resource type="AudioStream" uid="uid://43opo7gp2yd7" path="res://Assets/Audio/taustamusiikki.mp3" id="1_fnn4p"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_fnn4p")
+autoplay = true
