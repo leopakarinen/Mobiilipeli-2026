@@ -8,6 +8,8 @@ public partial class MainMenu1 : Control
     [Export] private TextureButton _SettingsButton;
     [Export] private SettingsMenu _SettingsMenu; // viittaus erilliseen CanvasLayer-sceneen
     [Export] private Tutorialscreen _TutorialScreen;
+    [Export] private TextureButton _VolumeButton; // PITÄÄ JATKAA ON KESKEN VAIN EXPORTATTU
+    [Export] private TextureButton _MusicButton;
 
     public override void _Ready()
     {

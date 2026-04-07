@@ -118,20 +118,20 @@ grow_horizontal = 2
 script = ExtResource("4_pbw6q")
 
 [node name="Heart1" type="AnimatedSprite2D" parent="MainUI/HealthBar"]
-position = Vector2(26.624998, 22.234373)
+position = Vector2(49, 22)
 scale = Vector2(0.82083327, 0.7255208)
 sprite_frames = SubResource("SpriteFrames_vy5pj")
 animation = &"Lose"
 
 [node name="Heart2" type="AnimatedSprite2D" parent="MainUI/HealthBar"]
-position = Vector2(74, 22)
+position = Vector2(95.00001, 23)
 scale = Vector2(0.8333331, 0.76666665)
 sprite_frames = SubResource("SpriteFrames_bmxlf")
 animation = &"Idle"
 
 [node name="Heart3" type="AnimatedSprite2D" parent="MainUI/HealthBar"]
-position = Vector2(131, 22)
-scale = Vector2(0.7666667, 0.76666665)
+position = Vector2(140, 23)
+scale = Vector2(0.8333334, 0.76666665)
 sprite_frames = SubResource("SpriteFrames_4kpch")
 animation = &"Idle"
 

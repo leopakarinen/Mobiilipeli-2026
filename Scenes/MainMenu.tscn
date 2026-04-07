@@ -38,7 +38,7 @@ texture = ExtResource("2_xim88")
 [node name="Kyltti" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 5.0
-offset_top = 77.0
+offset_top = 54.0
 offset_right = 1138.0
 offset_bottom = 651.0
 texture = ExtResource("3_xim88")
@@ -49,20 +49,20 @@ visible = false
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 284.0
-offset_top = 323.0
-offset_right = 599.0
-offset_bottom = 427.0
+offset_left = 275.0
+offset_top = 304.0
+offset_right = 601.0
+offset_bottom = 424.0
 texture_normal = ExtResource("5_xim88")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="SettingsButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 294.0
-offset_top = 421.0
-offset_right = 594.0
-offset_bottom = 524.0
+offset_left = 286.0
+offset_top = 407.0
+offset_right = 591.0
+offset_bottom = 525.0
 texture_normal = ExtResource("6_xim88")
 ignore_texture_size = true
 stretch_mode = 0
@@ -70,7 +70,7 @@ stretch_mode = 0
 [node name="ExitButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 332.0
-offset_top = 545.0
+offset_top = 535.0
 offset_right = 545.0
 offset_bottom = 608.0
 texture_normal = ExtResource("7_xim88")

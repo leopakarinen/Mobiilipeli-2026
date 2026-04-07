@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://td02sbxywgan"]
+[gd_scene load_steps=5 format=3 uid="uid://td02sbxywgan"]
 
 [ext_resource type="Script" uid="uid://b32p04nrvlann" path="res://Scripts/Tutorialscreen.cs" id="1_csi5h"]
 [ext_resource type="Texture2D" uid="uid://dtdc7w4wym7aj" path="res://Assets/tutorial screen.png" id="2_e3jvr"]
 [ext_resource type="Texture2D" uid="uid://dcbuht41kwcy4" path="res://Assets/x nappi.png" id="3_e2ntd"]
+[ext_resource type="Texture2D" uid="uid://cgp7ql8bhu8ap" path="res://Assets/kissa iloinen.png" id="3_e3jvr"]
 
 [node name="Tutorialscreen" type="CanvasLayer" node_paths=PackedStringArray("_CloseButton")]
 script = ExtResource("1_csi5h")
@@ -26,6 +27,14 @@ offset_bottom = 207.75
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_e3jvr")
+
+[node name="kissa" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 764.0
+offset_top = 243.0
+offset_right = 1163.0
+offset_bottom = 648.0
+texture = ExtResource("3_e3jvr")
 
 [node name="CloseButton" type="TextureButton" parent="."]
 offset_left = 748.0
