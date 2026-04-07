@@ -41,7 +41,7 @@ public partial class MainMenu1 : Control
     private void OnLanguageChanged(string lang)
     {
         GD.Print("Kieli vaihdettiin: ", lang);
-        Global.CurrentLang = lang; // 🔥 tallennetaan Globaliin
+        Global.CurrentLang = lang; //  tallennetaan Globaliin
         UpdateImages();            // päivitä napit heti
     }
 

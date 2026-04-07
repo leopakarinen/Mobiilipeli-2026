@@ -58,10 +58,10 @@ expand_mode = 1
 
 [node name="RetryButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 454.0
-offset_top = 365.0
-offset_right = 677.0
-offset_bottom = 467.0
+offset_left = 431.0
+offset_top = 359.0
+offset_right = 698.0
+offset_bottom = 461.0
 texture_normal = ExtResource("6_uylih")
 ignore_texture_size = true
 stretch_mode = 0
@@ -69,8 +69,8 @@ stretch_mode = 0
 [node name="MenuButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 442.0
-offset_top = 451.0
-offset_right = 672.0
+offset_top = 436.0
+offset_right = 684.0
 offset_bottom = 545.0
 texture_normal = ExtResource("7_3817r")
 ignore_texture_size = true
@@ -81,7 +81,7 @@ layout_mode = 0
 offset_left = 448.0
 offset_top = 554.0
 offset_right = 655.0
-offset_bottom = 607.0
+offset_bottom = 615.0
 texture_normal = ExtResource("8_mitgx")
 ignore_texture_size = true
 stretch_mode = 0
