@@ -1,16 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmdl03jyxigfk"]
+[gd_scene load_steps=6 format=3 uid="uid://bmdl03jyxigfk"]
 
-[ext_resource type="Script" uid="uid://dteaju7fnjt3y" path="res://Scenes/Pausemenu.cs" id="1_mhql6"]
+[ext_resource type="Script" uid="uid://dteaju7fnjt3y" path="res://Scripts/Pausemenu.cs" id="1_mhql6"]
 [ext_resource type="Texture2D" uid="uid://bmh8o447mql80" path="res://Assets/tausta.png" id="2_d8wnl"]
-[ext_resource type="Texture2D" uid="uid://bbm2t06c21hql" path="res://Assets/settings laatikko.png" id="2_kd4mq"]
-[ext_resource type="Texture2D" uid="uid://dcbuht41kwcy4" path="res://Assets/x nappi.png" id="3_6chnl"]
-[ext_resource type="Texture2D" uid="uid://quxn3i8hala5" path="res://Assets/kissa suru.png" id="3_714i2"]
+[ext_resource type="Texture2D" uid="uid://ss2nicphs6uh" path="res://Assets/suomi_fi.png" id="4_6chnl"]
 [ext_resource type="Texture2D" uid="uid://buxjttyq0lgl6" path="res://Assets/menu_en.png" id="4_kd4mq"]
+[ext_resource type="Texture2D" uid="uid://bghflce5h814x" path="res://Assets/paused teksti.png" id="5_d8wnl"]
 
-[node name="Pausemenu" type="CanvasLayer" node_paths=PackedStringArray("_CloseButton", "_MenuButton")]
+[node name="Pausemenu" type="CanvasLayer" node_paths=PackedStringArray("_MenuButton", "_PlayButton")]
 script = ExtResource("1_mhql6")
-_CloseButton = NodePath("CloseButton")
 _MenuButton = NodePath("MenuButton")
+_PlayButton = NodePath("PlayButton")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1152.0
@@ -25,48 +24,33 @@ texture = ExtResource("2_d8wnl")
 [node name="ColorRect" type="ColorRect" parent="Panel/Tausta"]
 layout_mode = 0
 offset_left = -2.0
-offset_top = 2.0
-offset_right = 1151.0
+offset_top = -4.0
+offset_right = 1153.0
 offset_bottom = 647.0
 color = Color(0.09803922, 0.09803922, 0.09803922, 0.6627451)
 
-[node name="kissa" type="TextureRect" parent="Panel/Tausta"]
-layout_mode = 0
-offset_left = 837.0
-offset_top = 281.0
-offset_right = 1152.0
-offset_bottom = 650.0
-texture = ExtResource("3_714i2")
-
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -339.5
-offset_top = -214.5
-offset_right = 339.5
-offset_bottom = 214.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_kd4mq")
-
-[node name="CloseButton" type="TextureButton" parent="."]
-offset_left = 846.0
-offset_top = 125.0
-offset_right = 896.0
-offset_bottom = 172.0
-texture_normal = ExtResource("3_6chnl")
-ignore_texture_size = true
-stretch_mode = 0
-
 [node name="MenuButton" type="TextureButton" parent="."]
-offset_left = 324.0
-offset_top = 280.0
-offset_right = 572.0
-offset_bottom = 361.0
+offset_left = 319.0
+offset_top = 236.0
+offset_right = 567.0
+offset_bottom = 402.0
 texture_normal = ExtResource("4_kd4mq")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="PlayButton" type="TextureButton" parent="."]
+offset_left = 607.0
+offset_top = 222.0
+offset_right = 786.0
+offset_bottom = 406.0
+texture_normal = ExtResource("4_6chnl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="PlayButton"]
+layout_mode = 0
+offset_left = -264.0
+offset_top = -170.0
+offset_right = 173.0
+offset_bottom = 30.0
+texture = ExtResource("5_d8wnl")

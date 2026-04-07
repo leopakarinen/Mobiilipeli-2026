@@ -39,7 +39,7 @@ offset_right = 1152.0
 offset_bottom = 650.0
 texture = ExtResource("3_gjtdd")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Game over teksti" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 341.0
 offset_top = 27.0
