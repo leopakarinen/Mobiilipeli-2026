@@ -11,6 +11,8 @@ public partial class MainMenu1 : Control
     [Export] private TextureButton _VolumeButton; // PITÄÄ JATKAA ON KESKEN VAIN EXPORTATTU
     [Export] private TextureButton _MusicButton;
 
+    private bool _isMuted = false;
+
     public override void _Ready()
     {
         // Liitä napit
@@ -18,6 +20,7 @@ public partial class MainMenu1 : Control
         _ExitButton.Pressed += OnQuitPressed;
         _SettingsButton.Pressed += OnOptionsPressed;
         _TutorialScreen.TutorialClosed += OnTutorialClosed;
+        _VolumeButton.Pressed += OnVolumePressed;
 
         // Liitä SettingsMenu:n signal
         _SettingsMenu.LanguageChanged += OnLanguageChanged;
@@ -27,6 +30,8 @@ public partial class MainMenu1 : Control
 
         // Päivitä napit Global-kielen mukaan
         UpdateImages();
+
+        UpdateVolumeIcon(); // updates volume button icon
     }
 
     // Päivittää kaikkien nappien kuvat Global.CurrentLang:n mukaan
@@ -66,4 +71,26 @@ public partial class MainMenu1 : Control
     {
         _SettingsMenu.Visible = !_SettingsMenu.Visible; // toggle näkyvyys
     }
+    private void OnVolumePressed()
+{
+    _isMuted = !_isMuted;
+
+    int busIndex = AudioServer.GetBusIndex("Master");
+    AudioServer.SetBusMute(busIndex, _isMuted);
+
+    UpdateVolumeIcon();
+}
+
+private void UpdateVolumeIcon()
+{
+    if (_isMuted)
+    {
+        _VolumeButton.TextureNormal = GD.Load<Texture2D>("res://Assets/volume_off.png");
+    }
+    else
+    {
+        _VolumeButton.TextureNormal = GD.Load<Texture2D>("res://Assets/volume_on.png");
+    }
+}
+
 }
