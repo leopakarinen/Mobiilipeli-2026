@@ -7,7 +7,7 @@ public partial class Fish : Area2D
     [Export] private float _maxRandomSpeed = 200.0f;
     [Export] private float _wobbleAmount = 10f;
     [Export] private float _wobbleSpeed = 2f;
-    [Export] private Texture2D[] _fishTextures;
+
 
     private int _points = 1;
 
@@ -15,13 +15,13 @@ public partial class Fish : Area2D
     private float _baseY;
     private int _direction = 1;
 
-    private Sprite2D _fish;
+    private AnimatedSprite2D _fish;
 
     private AudioStreamPlayer2D _clickSound;
 
     public override void _Ready()
     {
-        _fish = GetNode<Sprite2D>("Sprite2D");
+        _fish = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         _clickSound = GetNode<AudioStreamPlayer2D>("ClickSound");
 
@@ -30,7 +30,7 @@ public partial class Fish : Area2D
         RandomNumberGenerator rng = new RandomNumberGenerator();  // Sets a random speed for the fish. Value between _minSpeed - _maxRandomSpeed
         _maxSpeed = rng.RandfRange(_minSpeed, _maxRandomSpeed);
 
-        SetRandomTexture();
+        SetRandomAnimation();
 
         UpdateFlip();
     }
@@ -80,48 +80,43 @@ public partial class Fish : Area2D
             _fish.FlipH = false;
     }
 
-     private void SetRandomTexture()
+     private void SetRandomAnimation()
+{
+    if (_fish == null)
+        return;
+
+    RandomNumberGenerator rng = new RandomNumberGenerator();
+    float roll = rng.Randf();
+
+    string animationName;
+
+    if (roll < 0.35f)
     {
-        if (_fish == null || _fishTextures == null || _fishTextures.Length < 5)
-            return;
-
-        RandomNumberGenerator rng = new RandomNumberGenerator();
-        float roll = rng.Randf();
-
-        int index;  //Spawning chance for each type of fish
-
-        if (roll < 0.35f)
-            index = 0; //common
-        else if (roll < 0.60f)
-            index = 1; //common
-        else if (roll < 0.80f)
-            index = 2; //common
-        else if (roll < 0.90f)
-            index = 3; //uncommon
-        else
-            index = 4; //rare fish
-
-        _fish.Texture = _fishTextures[index];
-
-        switch (index) //Point values for fish
-        {
-            case 0:
-                _points = 1;
-                break;
-            case 1:
-                _points = 2;
-                break;
-            case 2:
-                _points = 2;
-                break;
-            case 3:
-                _points = 3;
-                break;
-            case 4:
-                _points = 10;
-                break;
-        }
+        animationName = "Ahven";
+        _points = 1;
     }
+    else if (roll < 0.60f)
+    {
+        animationName = "Särki";
+        _points = 2;
+    }
+    else if (roll < 0.80f)
+    {
+        animationName = "Hauki";
+        _points = 2;
+    }
+    else if (roll < 0.90f)
+    {
+        animationName = "Lohi";
+        _points = 3;
+    }
+    else {
+        animationName = "Mamelukki";
+        _points = 10;
+    }
+
+    _fish.Play(animationName);
+}
 
 
 	//Checks if a fish is pressed and adds a point to the player.
