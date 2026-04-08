@@ -28,7 +28,11 @@ public partial class Fish : Area2D
         _clickSound.Bus = "SFX";
 
         RandomNumberGenerator rng = new RandomNumberGenerator();  // Sets a random speed for the fish. Value between _minSpeed - _maxRandomSpeed
-        _maxSpeed = rng.RandfRange(_minSpeed, _maxRandomSpeed);
+
+       int score = GameManager.Instance.Score;
+       float speedBonus = Mathf.Min(score * 2f, 100f);
+
+        _maxSpeed = rng.RandfRange(_minSpeed + speedBonus, _maxRandomSpeed + speedBonus);
 
         SetRandomAnimation();
 

@@ -12,6 +12,11 @@ public partial class GameManager : Node
 		private set;
 	}
 
+	public int Score {
+		
+		get {return _score; }
+	}
+
 	public override void _Ready()
 	{
 		//Singleton promises that only one alien is could be made at a time

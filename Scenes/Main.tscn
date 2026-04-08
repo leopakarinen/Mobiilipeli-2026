@@ -90,7 +90,7 @@ font_color = Color(0, 0, 0, 1)
 [node name="FishSpawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_idj7w")
 fish_scn = ExtResource("2_kln2b")
-spawn_points = [NodePath("SpawnLeft1"), NodePath("SpawnRight1"), NodePath("SpawnLeft2")]
+spawn_points = [NodePath("SpawnLeft1"), NodePath("SpawnRight1"), NodePath("SpawnLeft2"), NodePath("SpawnRight2"), NodePath("SpawnLeft3"), NodePath("SpawnRight3")]
 
 [node name="SpawnLeft1" type="Marker2D" parent="FishSpawner"]
 position = Vector2(-45, 548)
@@ -100,6 +100,15 @@ position = Vector2(1189, 339)
 
 [node name="SpawnLeft2" type="Marker2D" parent="FishSpawner"]
 position = Vector2(-46, 170)
+
+[node name="SpawnRight2" type="Marker2D" parent="FishSpawner"]
+position = Vector2(1189, 526)
+
+[node name="SpawnLeft3" type="Marker2D" parent="FishSpawner"]
+position = Vector2(-46, 372)
+
+[node name="SpawnRight3" type="Marker2D" parent="FishSpawner"]
+position = Vector2(1178, 145)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
@@ -152,6 +161,7 @@ label_settings = SubResource("LabelSettings_vy5pj")
 script = ExtResource("7_vy5pj")
 
 [node name="HazardSpawner" type="Node2D" parent="."]
+position = Vector2(-28, -12)
 script = ExtResource("6_jw32o")
 hazardScene = ExtResource("7_50glp")
 
