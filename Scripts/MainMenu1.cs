@@ -74,7 +74,7 @@ public partial class MainMenu1 : Control
 {
     _isMuted = !_isMuted;
 
-    int busIndex = AudioServer.GetBusIndex("Music");
+    int busIndex = AudioServer.GetBusIndex("Master");
     AudioServer.SetBusMute(busIndex, _isMuted);
 
     UpdateVolumeIcon();

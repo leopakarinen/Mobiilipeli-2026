@@ -27,7 +27,7 @@ texture = ExtResource("2_ek8ke")
 [node name="ColorRect" type="ColorRect" parent="Tausta"]
 layout_mode = 0
 offset_left = -2.0
-offset_top = 2.0
+offset_top = -5.0
 offset_right = 1151.0
 offset_bottom = 647.0
 color = Color(0.09803922, 0.09803922, 0.09803922, 0.6627451)
