@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://63gvxu0pfoki" path="res://Assets/kalaverkko.png" id="3_gvtqr"]
 [ext_resource type="Texture2D" uid="uid://dwv7uk0irgw31" path="res://Assets/boot kropattu.png" id="3_pn62k"]
 [ext_resource type="Texture2D" uid="uid://kxcywhkj6yj8" path="res://Assets/pullo kropattu.png" id="4_gvtqr"]
-[ext_resource type="AudioStream" uid="uid://din1o7di6jdtu" path="res://Assets/Audio/damage.wav" id="5_pn62k"]
+[ext_resource type="AudioStream" uid="uid://dw2ygp3rmtvru" path="res://Assets/Audio/DamageSound2.0.wav" id="5_pn62k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0g2dh"]
 size = Vector2(102, 69)
