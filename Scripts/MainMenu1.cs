@@ -6,7 +6,7 @@ public partial class MainMenu1 : Control
     [Export] private TextureButton _PlayButton;
     [Export] private TextureButton _ExitButton;
     [Export] private TextureButton _SettingsButton;
-    [Export] private SettingsMenu _SettingsMenu; // viittaus erilliseen CanvasLayer-sceneen
+    [Export] private SettingsMenu _SettingsMenu; //  CanvasLayer-scene
     [Export] private Tutorialscreen _TutorialScreen;
     [Export] private TextureButton _VolumeButton;
 
@@ -14,41 +14,41 @@ public partial class MainMenu1 : Control
 
     public override void _Ready()
     {
-        // Liitä napit
+        // adds buttons
         _PlayButton.Pressed += OnPlayButtonPressed;
         _ExitButton.Pressed += OnQuitPressed;
         _SettingsButton.Pressed += OnOptionsPressed;
         _TutorialScreen.TutorialClosed += OnTutorialClosed;
         _VolumeButton.Pressed += OnVolumePressed;
 
-        // Liitä SettingsMenu:n signal
+        // settings menu signal
         _SettingsMenu.LanguageChanged += OnLanguageChanged;
 
-        // Piilotetaan SettingsMenu aluksi
+        // hides menu
         _SettingsMenu.Visible = false;
 
-        // Päivitä napit Global-kielen mukaan
+        // Updates buttons from Global
         UpdateImages();
 
         UpdateVolumeIcon(); // updates volume button icon
     }
 
-    // Päivittää kaikkien nappien kuvat Global.CurrentLang:n mukaan
+    // Updates photo icons from global
     private void UpdateImages()
     {
-        string lang = Global.CurrentLang; // 🔥 käytetään Globalia
+        string lang = Global.CurrentLang;
 
         _PlayButton.TextureNormal = GD.Load<Texture2D>($"res://Assets/play_{lang}.png");
         _ExitButton.TextureNormal = GD.Load<Texture2D>($"res://Assets/exit_{lang}.png");
         _SettingsButton.TextureNormal = GD.Load<Texture2D>($"res://Assets/settings_{lang}.png");
     }
 
-    // SettingsMenu ilmoittaa signalilla
+    // SettingsMenu signal
     private void OnLanguageChanged(string lang)
     {
         GD.Print("Kieli vaihdettiin: ", lang);
-        Global.CurrentLang = lang; //  tallennetaan Globaliin
-        UpdateImages();            // päivitä napit heti
+        Global.CurrentLang = lang; //  saves to Globaliin
+        UpdateImages();            // updates buttons right away
     }
 
     private void OnPlayButtonPressed()
@@ -68,7 +68,7 @@ public partial class MainMenu1 : Control
 
     private void OnOptionsPressed()
     {
-        _SettingsMenu.Visible = !_SettingsMenu.Visible; // toggle näkyvyys
+        _SettingsMenu.Visible = !_SettingsMenu.Visible; // toggle visibility
     }
     private void OnVolumePressed()
 {
@@ -80,7 +80,7 @@ public partial class MainMenu1 : Control
     UpdateVolumeIcon();
 }
 
-private void UpdateVolumeIcon()
+private void UpdateVolumeIcon() // changes volume button icons
 {
     if (_isMuted)
     {
