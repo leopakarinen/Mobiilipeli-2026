@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 ]
+[gd_scene load_steps=11 format=3 uid="uid://c8q7ownvdx03g"]
 
 [ext_resource type="Script" uid="uid://blumju512dcuu" path="res://Scripts/MainMenu1.cs" id="1_8saeu"]
 [ext_resource type="Texture2D" uid="uid://dlf4325s4bbfy" path="res://Assets/mainmenu_tausta.png" id="2_xim88"]
@@ -7,10 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://b0xvge58167g4" path="res://Assets/play_en.png" id="5_xim88"]
 [ext_resource type="Texture2D" uid="uid://cduj4ivkq671u" path="res://Assets/settings_en.png" id="6_xim88"]
 [ext_resource type="Texture2D" uid="uid://baxy12dr7lp1e" path="res://Assets/exit_en.png" id="7_xim88"]
-[ext_resource type="PackedScene" path="res://Scenes/tutorialscreen.tscn" id="8_koqhg"]
+[ext_resource type="PackedScene" uid="uid://td02sbxywgan" path="res://Scenes/tutorialscreen.tscn" id="8_koqhg"]
 [ext_resource type="AudioStream" uid="uid://cly6i1iahvemd" path="res://Assets/Audio/menumusiikki.mp3" id="9_cmrfp"]
+[ext_resource type="Texture2D" uid="uid://bblxttc0336q6" path="res://Assets/volume_on.png" id="10_loo7a"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("_PlayButton", "_ExitButton", "_SettingsButton", "_SettingsMenu", "_TutorialScreen", "_VolumeButton", "_MusicButton")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("_PlayButton", "_ExitButton", "_SettingsButton", "_SettingsMenu", "_TutorialScreen", "_VolumeButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +29,6 @@ _SettingsButton = NodePath("SettingsButton")
 _SettingsMenu = NodePath("SettingsMenu")
 _TutorialScreen = NodePath("Tutorialscreen")
 _VolumeButton = NodePath("VolumeButton")
-_MusicButton = NodePath("MusicButton")
 
 [node name="Tausta" type="TextureRect" parent="."]
 layout_mode = 0
@@ -86,3 +86,13 @@ visible = false
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_cmrfp")
 autoplay = true
+
+[node name="VolumeButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1104.0
+offset_top = 600.0
+offset_right = 1144.0
+offset_bottom = 640.0
+texture_normal = ExtResource("10_loo7a")
+ignore_texture_size = true
+stretch_mode = 0
