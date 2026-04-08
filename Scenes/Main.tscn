@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://noqp4dsqd788" path="res://Scenes/Hazard.tscn" id="7_50glp"]
 [ext_resource type="FontFile" uid="uid://bmqar5ty4npte" path="res://Assets/font/pixel_3/pixel.ttf" id="7_bmxlf"]
 [ext_resource type="Script" uid="uid://dtgq0yu1navbg" path="res://Scripts/ScoreUi.cs" id="7_vy5pj"]
-[ext_resource type="Texture2D" uid="uid://mm1qn5qrrlwu" path="res://Assets/pause button.png" id="11_grg3l"]
-[ext_resource type="Script" uid="uid://b82ugoairkpgo" path="res://Scenes/PauseButton.cs" id="12_frkhe"]
+[ext_resource type="Texture2D" uid="uid://0k3kfwuh326e" path="res://Assets/26peli_pause_button1.png" id="11_frkhe"]
+[ext_resource type="Script" uid="uid://b82ugoairkpgo" path="res://Scripts/PauseButton.cs" id="12_frkhe"]
 [ext_resource type="PackedScene" uid="uid://bmdl03jyxigfk" path="res://Scenes/pausemenu.tscn" id="13_frkhe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vy5pj"]
@@ -160,7 +160,7 @@ offset_left = 1096.0
 offset_top = 596.0
 offset_right = 1136.0
 offset_bottom = 636.0
-texture_normal = ExtResource("11_grg3l")
+texture_normal = ExtResource("11_frkhe")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("12_frkhe")

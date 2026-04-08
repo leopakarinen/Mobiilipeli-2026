@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dteaju7fnjt3y" path="res://Scripts/Pausemenu.cs" id="1_mhql6"]
 [ext_resource type="Texture2D" uid="uid://bmh8o447mql80" path="res://Assets/tausta.png" id="2_d8wnl"]
-[ext_resource type="Texture2D" uid="uid://ss2nicphs6uh" path="res://Assets/suomi_fi.png" id="4_6chnl"]
+[ext_resource type="Texture2D" uid="uid://f5fkiu56a3yt" path="res://Assets/26peli_pause_button2.png" id="4_6chnl"]
 [ext_resource type="Texture2D" uid="uid://buxjttyq0lgl6" path="res://Assets/menu_en.png" id="4_kd4mq"]
 [ext_resource type="Texture2D" uid="uid://bghflce5h814x" path="res://Assets/paused teksti.png" id="5_d8wnl"]
 
@@ -39,18 +39,17 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="PlayButton" type="TextureButton" parent="."]
-offset_left = 607.0
-offset_top = 222.0
-offset_right = 786.0
-offset_bottom = 406.0
+offset_left = 667.0
+offset_top = 238.0
+offset_right = 836.0
+offset_bottom = 422.0
 texture_normal = ExtResource("4_6chnl")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureRect" type="TextureRect" parent="PlayButton"]
-layout_mode = 0
-offset_left = -264.0
-offset_top = -170.0
-offset_right = 173.0
-offset_bottom = 30.0
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 369.0
+offset_top = 44.0
+offset_right = 806.0
+offset_bottom = 244.0
 texture = ExtResource("5_d8wnl")
