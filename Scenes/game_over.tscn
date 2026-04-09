@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfevcuy2l05qr"]
+[gd_scene load_steps=11 format=3 uid="uid://bfevcuy2l05qr"]
 
 [ext_resource type="Script" uid="uid://cg2nwsnudskxc" path="res://Scripts/GameOver.cs" id="1_8fo1c"]
 [ext_resource type="Texture2D" uid="uid://bmh8o447mql80" path="res://Assets/tausta.png" id="2_ek8ke"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://buxjttyq0lgl6" path="res://Assets/menu_en.png" id="7_3817r"]
 [ext_resource type="Texture2D" uid="uid://c0frgd7gy4rl6" path="res://Assets/quit_en.png" id="8_mitgx"]
 [ext_resource type="AudioStream" uid="uid://cayag132eefce" path="res://Assets/Audio/surukisu.mp3" id="9_uylih"]
+[ext_resource type="Texture2D" uid="uid://bbm2t06c21hql" path="res://Assets/settings laatikko.png" id="10_3817r"]
 
 [node name="GameOver" type="Control" node_paths=PackedStringArray("_RetryButton", "_QuitButton", "_MenuButton")]
 layout_mode = 3
@@ -90,3 +91,11 @@ stretch_mode = 0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_uylih")
 autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 272.0
+offset_right = 391.0
+offset_bottom = 612.0
+texture = ExtResource("10_3817r")
