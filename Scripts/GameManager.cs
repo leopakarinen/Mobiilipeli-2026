@@ -13,7 +13,7 @@ public partial class GameManager : Node
 	}
 
 	public int Score {
-		
+
 		get {return _score; }
 	}
 
@@ -82,6 +82,6 @@ public partial class GameManager : Node
 	private void GameOverScreen()
 	{
 		GetTree().ChangeSceneToFile("res://Scenes/game_over.tscn");
-		ResetLives();
+		
 	}
 }

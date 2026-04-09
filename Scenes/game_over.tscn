@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfevcuy2l05qr"]
+[gd_scene load_steps=14 format=3 uid="uid://bfevcuy2l05qr"]
 
 [ext_resource type="Script" uid="uid://cg2nwsnudskxc" path="res://Scripts/GameOver.cs" id="1_8fo1c"]
 [ext_resource type="Texture2D" uid="uid://bmh8o447mql80" path="res://Assets/tausta.png" id="2_ek8ke"]
@@ -10,6 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://c0frgd7gy4rl6" path="res://Assets/quit_en.png" id="8_mitgx"]
 [ext_resource type="AudioStream" uid="uid://cayag132eefce" path="res://Assets/Audio/surukisu.mp3" id="9_uylih"]
 [ext_resource type="Texture2D" uid="uid://bbm2t06c21hql" path="res://Assets/settings laatikko.png" id="10_3817r"]
+[ext_resource type="FontFile" uid="uid://bmqar5ty4npte" path="res://Assets/font/pixel_3/pixel.ttf" id="11_gs2es"]
+[ext_resource type="Script" uid="uid://biljwaleqhfeo" path="res://Scenes/GameOverScoreLabel.cs" id="12_asocn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_61f6c"]
+font = ExtResource("11_gs2es")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
 
 [node name="GameOver" type="Control" node_paths=PackedStringArray("_RetryButton", "_QuitButton", "_MenuButton")]
 layout_mode = 3
@@ -94,8 +101,18 @@ autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 272.0
-offset_right = 391.0
-offset_bottom = 612.0
+offset_left = 23.0
+offset_top = 279.0
+offset_right = 380.0
+offset_bottom = 619.0
 texture = ExtResource("10_3817r")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 56.0
+offset_top = 307.0
+offset_right = 361.0
+offset_bottom = 592.0
+label_settings = SubResource("LabelSettings_61f6c")
+script = ExtResource("12_asocn")
