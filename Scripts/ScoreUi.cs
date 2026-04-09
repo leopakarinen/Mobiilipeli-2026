@@ -9,7 +9,7 @@ public partial class ScoreUi : Label
 	{
 		//connect to signal, changes the score
 		GameManager.Instance.ScoreChanged += OnScoreChanged;
-		OnScoreChanged(0);
+		OnScoreChanged(GameManager.Instance.Score);
 
     }
 

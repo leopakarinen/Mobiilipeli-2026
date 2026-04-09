@@ -53,11 +53,13 @@ public partial class MainMenu1 : Control
 
     private void OnPlayButtonPressed()
     {
+
         _TutorialScreen.Visible = true;
     }
 
     private void OnTutorialClosed()
     {
+        GameManager.Instance.ResetLives();
         GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
     }
 
