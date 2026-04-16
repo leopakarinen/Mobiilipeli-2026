@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d3hgx46nrxgi4"]
+[gd_scene load_steps=25 format=3 uid="uid://d3hgx46nrxgi4"]
 
 [ext_resource type="Texture2D" uid="uid://cj437qmyx1a0l" path="res://Assets/pikselisärki.png" id="3_bce5k"]
 [ext_resource type="Script" uid="uid://ddgjrkpwcyt00" path="res://Scripts/Fish.cs" id="3_epypp"]
@@ -16,7 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://b34o5g6cjyq3t" path="res://AnimationFramesMuiltaPääsyKiellettyPaitsiJesu/LohiFr2.png" id="12_4u5oi"]
 [ext_resource type="Texture2D" uid="uid://n4x0q6nxh7n8" path="res://AnimationFramesMuiltaPääsyKiellettyPaitsiJesu/LohiFr3.png" id="13_ecjoa"]
 [ext_resource type="Texture2D" uid="uid://4254ktal0db1" path="res://AnimationFramesMuiltaPääsyKiellettyPaitsiJesu/LohiFr1&4.png" id="14_6fpkn"]
+[ext_resource type="Texture2D" uid="uid://b06lhkxob07gy" path="res://AnimationFramesMuiltaPääsyKiellettyPaitsiJesu/Mamelukkifr2.png" id="16_huhx8"]
 [ext_resource type="Texture2D" uid="uid://c63lb5b5nu0kn" path="res://AnimationFramesMuiltaPääsyKiellettyPaitsiJesu/SärkiFr2.png" id="17_12jck"]
+[ext_resource type="Texture2D" uid="uid://dmdr620krmkjh" path="res://AnimationFramesMuiltaPääsyKiellettyPaitsiJesu/Mamelukkifr3.png" id="17_v1ruv"]
+[ext_resource type="Texture2D" uid="uid://c4ny8jhdoykd1" path="res://AnimationFramesMuiltaPääsyKiellettyPaitsiJesu/Mamelukkifr1&4.png" id="18_255bt"]
 [ext_resource type="Texture2D" uid="uid://nvtsxyj8w8wg" path="res://AnimationFramesMuiltaPääsyKiellettyPaitsiJesu/SärkiFr3.png" id="18_k8hb5"]
 [ext_resource type="Texture2D" uid="uid://o3xtbud0d644" path="res://AnimationFramesMuiltaPääsyKiellettyPaitsiJesu/SärkiFr1&4.png" id="19_dyov4"]
 
@@ -79,6 +82,15 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_orbqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_huhx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_v1ruv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_255bt")
 }],
 "loop": true,
 "name": &"Mamelukki",
@@ -116,4 +128,4 @@ stream = ExtResource("7_gk10o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(11, -2)
 sprite_frames = SubResource("SpriteFrames_db4py")
-animation = &"Särki"
+animation = &"Mamelukki"

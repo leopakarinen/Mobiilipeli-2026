@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ej4ek0pxhw2r"]
+[gd_scene load_steps=11 format=3 uid="uid://baa7ai1xtnjyt"]
 
 [ext_resource type="Script" uid="uid://blumju512dcuu" path="res://Scripts/MainMenu1.cs" id="1_8saeu"]
 [ext_resource type="Texture2D" uid="uid://dlf4325s4bbfy" path="res://Assets/mainmenu_tausta.png" id="2_xim88"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b0xvge58167g4" path="res://Assets/play_en.png" id="5_xim88"]
 [ext_resource type="Texture2D" uid="uid://cduj4ivkq671u" path="res://Assets/settings_en.png" id="6_xim88"]
 [ext_resource type="Texture2D" uid="uid://baxy12dr7lp1e" path="res://Assets/exit_en.png" id="7_xim88"]
-[ext_resource type="PackedScene" uid="uid://td02sbxywgan" path="res://Scenes/tutorialscreen.tscn" id="8_koqhg"]
+[ext_resource type="PackedScene" uid="uid://cirncf3oa7s2g" path="res://Scenes/tutorialscreen.tscn" id="8_koqhg"]
 [ext_resource type="AudioStream" uid="uid://cly6i1iahvemd" path="res://Assets/Audio/menumusiikki.mp3" id="9_cmrfp"]
 [ext_resource type="Texture2D" uid="uid://bblxttc0336q6" path="res://Assets/volume_on.png" id="10_loo7a"]
 
@@ -85,6 +85,7 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_cmrfp")
+volume_db = -15.928
 autoplay = true
 bus = &"Music"
 
