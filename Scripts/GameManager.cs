@@ -82,6 +82,6 @@ public partial class GameManager : Node
 	private void GameOverScreen()
 	{
 		GetTree().ChangeSceneToFile("res://Scenes/game_over.tscn");
-		
+
 	}
 }

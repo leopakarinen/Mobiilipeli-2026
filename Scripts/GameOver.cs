@@ -29,6 +29,7 @@ public partial class GameOver : Control
 
     private void OnRetryPressed()
     {
+        GameManager.Instance.ResetLives();
         GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
     }
 
