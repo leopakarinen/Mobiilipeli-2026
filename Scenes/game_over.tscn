@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://buxjttyq0lgl6" path="res://Assets/menu_en.png" id="7_3817r"]
 [ext_resource type="Texture2D" uid="uid://c0frgd7gy4rl6" path="res://Assets/quit_en.png" id="8_mitgx"]
 [ext_resource type="AudioStream" uid="uid://cayag132eefce" path="res://Assets/Audio/surukisu.mp3" id="9_uylih"]
-[ext_resource type="Texture2D" uid="uid://bbm2t06c21hql" path="res://Assets/settings laatikko.png" id="10_3817r"]
+[ext_resource type="Texture2D" uid="uid://ddeyejywame88" path="res://Assets/peli26_score_bubble1.png" id="10_gs2es"]
 [ext_resource type="FontFile" uid="uid://bmqar5ty4npte" path="res://Assets/font/pixel_3/pixel.ttf" id="11_gs2es"]
 [ext_resource type="Script" uid="uid://biljwaleqhfeo" path="res://Scenes/GameOverScoreLabel.cs" id="12_asocn"]
 
@@ -50,47 +50,47 @@ texture = ExtResource("3_gjtdd")
 
 [node name="Game over teksti" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 341.0
-offset_top = 27.0
-offset_right = 794.0
-offset_bottom = 337.0
+offset_left = 318.0
+offset_top = 35.0
+offset_right = 771.0
+offset_bottom = 345.0
 texture = ExtResource("4_eoghk")
 
 [node name="Kyltti" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 197.0
-offset_top = 163.0
-offset_right = 1132.0
-offset_bottom = 647.0
+offset_left = 152.0
+offset_top = 162.0
+offset_right = 1087.0
+offset_bottom = 646.0
 texture = ExtResource("5_gjtdd")
 expand_mode = 1
 
 [node name="RetryButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 431.0
-offset_top = 359.0
-offset_right = 698.0
-offset_bottom = 461.0
+offset_left = 387.0
+offset_top = 365.0
+offset_right = 654.0
+offset_bottom = 467.0
 texture_normal = ExtResource("6_uylih")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="MenuButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 442.0
-offset_top = 447.0
-offset_right = 684.0
-offset_bottom = 556.0
+offset_left = 396.0
+offset_top = 443.0
+offset_right = 638.0
+offset_bottom = 552.0
 texture_normal = ExtResource("7_3817r")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="QuitButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 450.0
-offset_top = 555.0
-offset_right = 657.0
-offset_bottom = 616.0
+offset_left = 404.0
+offset_top = 553.0
+offset_right = 611.0
+offset_bottom = 614.0
 texture_normal = ExtResource("8_mitgx")
 ignore_texture_size = true
 stretch_mode = 0
@@ -101,18 +101,18 @@ autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 279.0
-offset_right = 380.0
-offset_bottom = 619.0
-texture = ExtResource("10_3817r")
+offset_left = 760.0
+offset_top = 59.0
+offset_right = 1117.0
+offset_bottom = 399.0
+texture = ExtResource("10_gs2es")
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 56.0
-offset_top = 307.0
-offset_right = 361.0
-offset_bottom = 592.0
+offset_left = 772.0
+offset_top = 82.0
+offset_right = 1077.0
+offset_bottom = 259.0
 label_settings = SubResource("LabelSettings_61f6c")
 script = ExtResource("12_asocn")
