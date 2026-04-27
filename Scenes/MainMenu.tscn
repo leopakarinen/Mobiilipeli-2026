@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://baa7ai1xtnjyt"]
+[gd_scene load_steps=13 format=3 uid="uid://baa7ai1xtnjyt"]
 
 [ext_resource type="Script" uid="uid://blumju512dcuu" path="res://Scripts/MainMenu1.cs" id="1_8saeu"]
 [ext_resource type="Texture2D" uid="uid://dlf4325s4bbfy" path="res://Assets/mainmenu_tausta.png" id="2_xim88"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cirncf3oa7s2g" path="res://Scenes/tutorialscreen.tscn" id="8_koqhg"]
 [ext_resource type="AudioStream" uid="uid://cly6i1iahvemd" path="res://Assets/Audio/menumusiikki.mp3" id="9_cmrfp"]
 [ext_resource type="Texture2D" uid="uid://bblxttc0336q6" path="res://Assets/volume_on.png" id="10_loo7a"]
+[ext_resource type="Texture2D" uid="uid://jcd0rdirj48m" path="res://Assets/WellTech_Lab_logo-removebg-preview.png" id="11_rrcx7"]
+[ext_resource type="Texture2D" uid="uid://cys2oy3pupjdl" path="res://Assets/tiko_logo_musta_fin.png" id="12_fh7cp"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("_PlayButton", "_ExitButton", "_SettingsButton", "_SettingsMenu", "_TutorialScreen", "_VolumeButton")]
 layout_mode = 3
@@ -98,3 +100,24 @@ offset_bottom = 640.0
 texture_normal = ExtResource("10_loo7a")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.43400002
+anchor_bottom = 0.772
+offset_left = 27.0
+offset_top = 463.0
+offset_right = -309.96802
+offset_bottom = 126.74399
+texture = ExtResource("11_rrcx7")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 541.0
+offset_right = 839.0
+offset_bottom = 628.0
+texture = ExtResource("12_fh7cp")
+expand_mode = 1
